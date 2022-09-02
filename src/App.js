@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import GlobalStyle from './styles/Globalstyles';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<div>Root</div>} />
+        <Route path="/fruitstore" element={<div>상품 전체 조회 페이지</div>} />
+        <Route path="/fruitstore/:product_id" element={<div>상품 상세 페이지</div>} />
+        <Route path="/shop_payment/:product_id" element={<div>상품 주문 페이지</div>} />
+        <Route path="/shop_payment/complete" element={<div>주문 내역 확인 페이지</div>} />
+        <Route path="/admin" element={<div>관리자 페이지</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
