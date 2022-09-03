@@ -9,7 +9,7 @@ const Container = styled.ul`
 
 const TableHeader = styled.li`
   display: grid;
-  grid-template-columns: 1fr 1fr 3fr 3fr 3fr 5fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 3fr 3fr 3fr 3fr 2fr 2fr 3fr;
   height: 50px;
   background-color: #f2f5f7;
   border-bottom: 2px solid #c2d1d9;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import Table from '../../components/admin/management/Table';
 import productAtom from '../../store/productAtom';
 
@@ -30,8 +30,8 @@ const InnerHeader = styled.h2`
 `;
 
 const AuthManagement = () => {
-  const [products, setProducts] = useRecoilState(productAtom);
-  console.log(setProducts);
+  const products = useRecoilValue(productAtom);
+
   return (
     <Container>
       <Header>상품 관리</Header>

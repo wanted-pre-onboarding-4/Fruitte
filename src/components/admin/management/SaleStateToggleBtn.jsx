@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
+import productAtom from '../../../store/productAtom';
 
 const Container = styled.div`
   width: 45px;
@@ -8,7 +10,8 @@ const Container = styled.div`
   padding: 1px;
   position: relative;
   background-color: #c3cbcd;
-  margin-right: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 const Ball = styled.div`
@@ -18,13 +21,21 @@ const Ball = styled.div`
   background-color: white;
   box-shadow: 0px 1px 5px rgba(15, 15, 15, 0.6);
   position: absolute;
-  left: ${props => (props.isShown ? '' : '3px')};
-  right: ${props => (props.isShown ? '3px' : '')};
+  left: ${props => (props.isShown ? '3px' : 'unset')};
+  right: ${props => (props.isShown ? 'unset' : '3px')};
 `;
 
-const SaleStateToggleBtn = ({ isShown }) => {
+const SaleStateToggleBtn = ({ id, isShown }) => {
+  const setProducts = useSetRecoilState(productAtom);
+
+  const onClick = useCallback(() => {
+    setProducts(prev =>
+      prev.map(product => (product.product_id === id ? { ...product, isShown: !isShown } : product))
+    );
+  }, [isShown]);
+
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Ball isShown={isShown} />
     </Container>
   );
