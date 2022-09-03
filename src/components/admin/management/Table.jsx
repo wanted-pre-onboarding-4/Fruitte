@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
+import productAtom from '../../../store/productAtom';
 import TableItem from './TableItem';
 
 const Container = styled.ul`
@@ -21,7 +23,23 @@ const TableHeader = styled.li`
   }
 `;
 
+const Button = styled.button`
+  background-color: #424b5a;
+  padding: 8px 16px;
+  color: white;
+  &:active {
+    transform: scale(0.98);
+  }
+`;
+
 const Table = ({ productList }) => {
+  const [deleteItems, setDeleteItems] = useState([]);
+  const setProducts = useSetRecoilState(productAtom);
+
+  const onItemsDeleteClick = useCallback(() => {
+    setProducts(prev => prev.filter(product => !deleteItems.includes(product.product_id)));
+  }, [deleteItems]);
+
   return (
     <Container>
       <TableHeader>
@@ -36,8 +54,13 @@ const Table = ({ productList }) => {
         <div>상품삭제</div>
       </TableHeader>
       {productList.map(product => (
-        <TableItem key={product.product_id} product={product}></TableItem>
+        <TableItem
+          setDeleteItems={setDeleteItems}
+          key={product.product_id}
+          product={product}
+        ></TableItem>
       ))}
+      <Button onClick={onItemsDeleteClick}>전체 삭제</Button>
     </Container>
   );
 };

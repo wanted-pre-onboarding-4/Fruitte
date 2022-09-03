@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
+import productAtom from '../../../store/productAtom';
 import SaleStateToggleBtn from './SaleStateToggleBtn';
 
 const Li = styled.li`
@@ -43,12 +45,32 @@ const Button = styled.button`
   background-color: #424b5a;
   padding: 8px 16px;
   color: white;
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
-const TableItem = ({ product }) => {
+const TableItem = ({ product, setDeleteItems }) => {
+  const setProducts = useSetRecoilState(productAtom);
+
+  const onDeleteClick = useCallback(() => {
+    setProducts(prev => prev.filter(item => item.product_id !== product.product_id));
+  }, []);
+
+  const onCheckBoxClick = useCallback(
+    e => {
+      if (e.target.checked) {
+        setDeleteItems(prev => [...prev, product.product_id]);
+      } else {
+        setDeleteItems(prev => prev.filter(id => id !== product.product_id));
+      }
+    },
+    [product]
+  );
+
   return (
     <Li>
-      <input type="checkbox" />
+      <input onClick={onCheckBoxClick} type="checkbox" />
       <ItemWrapper>{product.product_id}</ItemWrapper>
       <ImageWrapper>
         <img src={product.product_image[0]} />
@@ -62,7 +84,7 @@ const TableItem = ({ product }) => {
       <ItemWrapper>{product.likes}</ItemWrapper>
       <ItemWrapper>{product.product_amount}</ItemWrapper>
       <ItemWrapper>
-        <Button>삭제</Button>
+        <Button onClick={onDeleteClick}>삭제</Button>
       </ItemWrapper>
     </Li>
   );
