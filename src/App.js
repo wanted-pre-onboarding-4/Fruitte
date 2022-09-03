@@ -5,7 +5,7 @@ import Header from './components/commons/Header';
 import productAtom from './store/productAtom';
 import GlobalStyle from './styles/Globalstyles';
 import ProductData from './data/product.json';
-import List from './components/fruitstore/list/List';
+import ListPage from './pages/ListPage';
 function App() {
   const setProductData = useSetRecoilState(productAtom);
 
@@ -19,7 +19,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<div>Root</div>} />
-        <Route path="/fruitstore" element={<List />} />
+        <Route path="/fruitstore" element={<ListPage />} />
         <Route path="/fruitstore/:product_id" element={<div>상품 상세 페이지</div>} />
         <Route path="/shop_payment/:product_id" element={<div>상품 주문 페이지</div>} />
         <Route path="/shop_payment/complete" element={<div>주문 내역 확인 페이지</div>} />
