@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/commons/Header';
 import GlobalStyle from './styles/Globalstyles';
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
+      <Header />
       <Routes>
         <Route path="/" element={<div>Root</div>} />
         <Route path="/fruitstore" element={<div>상품 전체 조회 페이지</div>} />
