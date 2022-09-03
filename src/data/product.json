@@ -16,7 +16,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -48,7 +49,7 @@
       {
         "option_title": "3kg",
         "option_price": 75000,
-        "is_sold_out": true
+        "is_sold_out": false
       }
     ],
     "likes": 14,
@@ -106,7 +107,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -196,7 +198,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -286,7 +289,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -376,7 +380,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -466,7 +471,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -556,7 +562,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -646,7 +653,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -736,7 +744,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
@@ -826,7 +835,8 @@
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000
+        "option_price": 50000,
+        "is_sold_out": false
       }
     ],
     "likes": 20,
