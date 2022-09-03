@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Container>
       <LogoImageContainer to="/">
-        <Logo />
+        <Logo width={150} height={35} />
       </LogoImageContainer>
       <HeaderItemContainer>
         <HeaderItem to="/">FRUITTE</HeaderItem>

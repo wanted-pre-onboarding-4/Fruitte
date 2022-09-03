@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Logo = () => {
+const Logo = ({ width, height }) => {
   return (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="150pt"
-      height="35pt"
+      width={`${width}pt`}
+      height={`${height}pt`}
       viewBox="0 0 928.000000 254.000000"
       preserveAspectRatio="xMidYMid meet"
     >
