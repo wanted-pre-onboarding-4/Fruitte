@@ -121,7 +121,7 @@ export const DeliveryWrap = styled.div`
   margin-bottom: 20px;
 `;
 
-export const Column = styled.div`
+export const Row = styled.div`
   display: flex;
   padding: 10px 0;
 `;

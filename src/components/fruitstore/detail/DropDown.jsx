@@ -11,9 +11,8 @@ export default function Dropdown({ options, pick, setPick, setTotalPrice }) {
 
   const onClickOption = el => () => {
     const temp = [...pick];
-    let remove = [];
-    remove = temp.find(item => item.option_title === el.option_title);
-    if (remove && remove.length !== 0) {
+    let remove = temp.find(item => item.option_title === el.option_title);
+    if (remove) {
       alert('이미 담은 상품입니다');
       return;
     }
@@ -28,6 +27,7 @@ export default function Dropdown({ options, pick, setPick, setTotalPrice }) {
       {
         option_title: el.option_title,
         option_price: el.option_price,
+        option_amount: 1,
       },
     ]);
     setTotalPrice(prev => prev + el.option_price);

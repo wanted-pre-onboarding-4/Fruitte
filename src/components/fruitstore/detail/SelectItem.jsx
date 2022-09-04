@@ -2,29 +2,41 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { Colors } from '../../../styles/Colors';
 
-export default function SelectItem({ item, setTotalPrice, setPick }) {
-  const [amount, setAmount] = useState(1);
-  const [price, setPrice] = useState(item.option_price);
+export default function SelectItem({ item, setTotalPrice, setPick, pick, index }) {
+  const [option, setOption] = useState({
+    amount: 1,
+    price: item.option_price,
+  });
+
+  const temp = [...pick];
 
   const onClickMinus = () => {
-    if (amount === 1) {
+    if (option.amount === 1) {
       alert('최소 주문 수량은 1개입니다');
       return;
     }
-    setAmount(prev => prev - 1);
-    setPrice(Number(item.option_price) * (amount - 1));
+    temp[index].option_amount = temp[index].option_amount - 1;
+    setPick(temp);
+    setOption({
+      amount: option.amount - 1,
+      price: Number(item.option_price) * (option.amount - 1),
+    });
     setTotalPrice(prev => prev - Number(item.option_price));
   };
 
   const onClickPlus = () => {
-    setAmount(prev => prev + 1);
-    setPrice(Number(item.option_price) * (amount + 1));
+    temp[index].option_amount = temp[index].option_amount + 1;
+    setPick(temp);
+    setOption({
+      amount: option.amount + 1,
+      price: Number(item.option_price) * (option.amount + 1),
+    });
     setTotalPrice(prev => prev + Number(item.option_price));
   };
 
   const onClickDelete = item => {
     setPick(prev => prev.filter(el => el.option_title !== item.option_title));
-    setTotalPrice(prev => prev - Number(item.option_price) * amount);
+    setTotalPrice(prev => prev - Number(item.option_price) * option.amount);
   };
 
   return (
@@ -42,10 +54,10 @@ export default function SelectItem({ item, setTotalPrice, setPick }) {
       <Price>
         <ButtonWrap>
           <button onClick={onClickMinus}>----</button>
-          <span>{amount}</span>
+          <span>{option.amount}</span>
           <button onClick={onClickPlus}>+++++</button>
         </ButtonWrap>
-        <TotalPrice>{price}</TotalPrice>
+        <TotalPrice>{option.price}</TotalPrice>
       </Price>
     </Wrap>
   );
