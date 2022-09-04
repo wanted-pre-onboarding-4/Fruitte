@@ -1,12 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function RegisterInput({ boxTitle, boxHeight, inputHeight }) {
+function RegisterInput({
+  boxTitle,
+  boxHeight,
+  inputHeight,
+  handleOnChange,
+  productKey,
+  productValue,
+}) {
   return (
     <ProductInputBox height={boxHeight}>
       <TitleBox height={boxHeight}>{boxTitle}</TitleBox>
       <InputBox height={boxHeight}>
-        <ProductInput type="text" height={inputHeight}></ProductInput>
+        <ProductInput
+          type="text"
+          height={inputHeight}
+          name={productKey}
+          value={productValue}
+          onChange={handleOnChange}
+        ></ProductInput>
       </InputBox>
     </ProductInputBox>
   );
@@ -37,7 +50,7 @@ export const InputBox = styled.div`
   border: 1px solid orange;
 `;
 
-const ProductInput = styled.input`
+export const ProductInput = styled.input`
   width: 506px;
   height: ${props => props.height};
   border: 1px solid purple;
