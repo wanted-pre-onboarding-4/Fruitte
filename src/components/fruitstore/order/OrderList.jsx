@@ -3,12 +3,35 @@ import styled from 'styled-components';
 import { Wrapper } from './order_info/CustomerInfo';
 import { Section, SectionTitle } from './OrderInfo';
 
+const DUMMY_OPTIONS = [
+  {
+    option_title: '2kg',
+    option_price: 50000,
+    option_amount: 3,
+  },
+  {
+    option_title: '5kg',
+    option_price: 50000,
+    option_amount: 4,
+  },
+];
+
 const OrderList = ({
-  data: { product_name, product_amount, product_price, discount_rate, product_image, delivery_fee },
+  data: {
+    product_name,
+    discount_rate,
+    product_image,
+    delivery_fee,
+    product_id,
+  },
 }) => {
-  const totalPrice = (product_price * product_amount - delivery_fee)
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const totalAmount = DUMMY_OPTIONS.reduce((pre, cur) => pre + cur.option_amount, 0);
+  const totalPrice = DUMMY_OPTIONS.reduce(
+    (pre, cur) => pre + cur.option_amount * cur.option_price,
+    0
+  );
+    const discount = (totalPrice * discount_rate)/100
+    const resultPrice = totalPrice - discount
   return (
     <Container>
       <Section>
@@ -17,32 +40,37 @@ const OrderList = ({
           <Message>주문하실 상품명 및 수량을 정확하게 확인해 주세요</Message>
           <ListNavWrapper>
             <ListNav>
-              <NavItem flex={0.7}>상품명</NavItem>
-              <NavItem flex={0.1}>가격</NavItem>
-              <NavItem flex={0.1}>수량</NavItem>
-              <NavItem flex={0.1}>합계</NavItem>
+              <NavItem flex={0.5}>상품명</NavItem>
+              <NavItem flex={0.1}>배송비</NavItem>
+              <NavItem flex={0.05}>수량</NavItem>
+              <NavItem flex={0.125}>할인</NavItem>
+              <NavItem flex={0.225}>합계(할인포함)</NavItem>
             </ListNav>
           </ListNavWrapper>
-          <ProductInfo>
+          <ProductInfo key={product_id}>
             <ProductImageAndDes>
-              <img src={product_image} alt="상품 이미지" />
+              <img src={product_image[0]} alt="상품 이미지" />
+              <div>
               <p>{product_name}</p>
+              {DUMMY_OPTIONS.map(option=>(
+                <Option key={option.title}>상품선택: {option.option_title} {option.option_amount}개 +({option.option_price})</Option>
+              ))}
+              </div>
             </ProductImageAndDes>
             <ResponsiveWrapper>
-              <ProductPrice>
+              <ProductDeliveryFee>
                 <p>
-                  {(product_price - discount_rate).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                  원
+                  {delivery_fee === 0 ? "무료" : `${delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}
                 </p>
-                <del>
-                  <p>{product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
-                </del>
-              </ProductPrice>
+              </ProductDeliveryFee>
               <ProductAmount>
-                <p>{product_amount}개</p>
+                <p>{totalAmount}개</p>
               </ProductAmount>
+              <ProductDiscount>
+                {discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+              </ProductDiscount>
               <ProductTotalPrice>
-                <p>{totalPrice}원</p>
+                <p>{resultPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</p>
               </ProductTotalPrice>
             </ResponsiveWrapper>
           </ProductInfo>
@@ -98,7 +126,7 @@ const ProductInfo = styled.div`
 
 const ResponsiveWrapper = styled.div`
   display: flex;
-  flex: 0.3;
+  flex: 0.5;
   justify-content: space-between;
   @media screen and (max-width: 768px) {
     max-width: 320px;
@@ -109,7 +137,7 @@ const ProductImageAndDes = styled.div`
   display: flex;
   align-items: center;
   column-gap: 1em;
-  flex: 0.7;
+  flex: 0.5;
   img {
     object-fit: cover;
     max-width: 100px;
@@ -118,9 +146,14 @@ const ProductImageAndDes = styled.div`
     width: 100%;
     border-radius: 5px;
   }
+  div{
+    display: flex;
+    flex-direction: column;
+    row-gap: .25em;
+  }
 `;
 
-const ProductPrice = styled.div`
+const ProductDeliveryFee = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -133,12 +166,23 @@ const ProductPrice = styled.div`
 
 const ProductAmount = styled.div`
   display: flex;
-  flex: 1;
+  flex: .5;
   justify-content: center;
 `;
 
+const ProductDiscount = styled.div`
+display: flex;
+  flex: 1.25;
+  justify-content: center;
+`
+
 const ProductTotalPrice = styled.div`
   display: flex;
-  flex: 1;
+  flex: 2.25;
   justify-content: center;
 `;
+
+const Option = styled.p`
+  font-size: .8rem;
+  color: #aaa9a9;
+`
