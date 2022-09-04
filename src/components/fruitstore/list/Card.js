@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai';
 export default function Card({ product }) {
   return (
-    <Link to={`/fruitstore/${product.product_id}`}>
-      <CardBox>
+    <CardBox>
+      <Link to={`/fruitstore/${product.product_id}`}>
         <ProductImg width="250px" height="150px" src={product.product_image[0]} />
         <ProductName>{product.product_name}</ProductName>
-        <TagContainer>
+        <TagBox>
           {product.product_tags.map(tag => {
             return (
               <>
@@ -21,23 +21,25 @@ export default function Card({ product }) {
               </>
             );
           })}
-        </TagContainer>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-          <div style={{ marginRight: '5px' }}>
-            {product.product_price - product.product_price * product.discount_rate * 0.01 + '원'}
-          </div>
-          <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '5px' }}>
-            {product.product_price + '원'}
-          </div>
-          <div style={{ margin: 'auto' }}>
-            <AiOutlineStar size="25" />
-            <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
-          </div>
+        </TagBox>
+      </Link>
+      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+        <div style={{ marginRight: '5px' }}>
+          {product.product_price - product.product_price * product.discount_rate * 0.01 + '원'}
         </div>
-        <div>배송방법:{product.delivery_way}</div>
-        <div>배송비:{product.delivery_fee}</div>
-      </CardBox>
-    </Link>
+        <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '5px' }}>
+          {product.product_price + '원'}
+        </div>
+        <div style={{ margin: 'auto' }}>
+          <AiOutlineStar size="25" />
+          <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
+        </div>
+      </div>
+      <DeleiverBox>
+        <DeleiverText>배송방식:{product.delivery_way}</DeleiverText>
+        <DeleiverText>배송비:{product.delivery_fee}</DeleiverText>
+      </DeleiverBox>
+    </CardBox>
   );
 }
 
@@ -47,7 +49,7 @@ const ProductName = styled.div`
   margin-bottom: 30px;
   padding-top: 15px;
 `;
-const TagContainer = styled.div`
+const TagBox = styled.div`
   display: flex;
   margin-bottom: 30px;
   height: auto;
@@ -61,7 +63,6 @@ const CardBox = styled.div`
   border-radius: 50px;
   padding-top: 15px;
   &:hover {
-    cursor: pointer;
     transform: translateY(-15px);
   }
 `;
@@ -77,4 +78,17 @@ const Tag = styled.div`
   color: ${props => props.fontcolor};
   padding: 5px;
   border-radius: 5px;
+`;
+
+const DeleiverBox = styled.div`
+  display: flex;
+  background-color: lavender;
+  justify-content: space-around;
+  border-radius: 60px;
+  margin-top: 15px;
+  width: 250px;
+`;
+const DeleiverText = styled.div`
+  margin: 15px 0 15px 5px;
+  font-weight: 800;
 `;

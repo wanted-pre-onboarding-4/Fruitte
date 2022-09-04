@@ -24,7 +24,6 @@ export default function List() {
 
 const Container = styled.div`
   width: 1500px;
-  height: 700px;
   display: grid;
   grid-template-columns: repeat(5, 300px);
   row-gap: 50px;
