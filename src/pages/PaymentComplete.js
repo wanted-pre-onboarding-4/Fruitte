@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
 const PaymentComplet = () => {
   const navigate = useNavigate();
   const data = useLocation().state;
-  console.log(data);
+
   const {
     delivery_fee: deliveryFee,
     delivery_info: deliveryInfo,

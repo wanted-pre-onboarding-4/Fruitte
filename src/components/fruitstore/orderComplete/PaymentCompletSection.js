@@ -20,7 +20,6 @@ const PaymentCompletSection = ({
   productName,
   productpPrice,
 }) => {
-  console.log(discountRate);
   return (
     <OrderProductInfo>
       <TableContainer>
