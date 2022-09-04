@@ -11,7 +11,7 @@ const BuyerInfo = ({ userInfo }) => {
   return (
     <BuyerInfoWrapper>
       <TableContainer>
-        <Table sx={{ minWidth: 550 }} aria-label="simple table">
+        <Table sx={{ minWidth: 400 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell colSpan={2}>

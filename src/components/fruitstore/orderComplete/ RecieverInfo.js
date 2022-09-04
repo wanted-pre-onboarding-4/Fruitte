@@ -12,7 +12,7 @@ const Reciever = ({ deliveryInfo }) => {
   return (
     <BuyerInfoWrapper>
       <TableContainer>
-        <Table sx={{ minWidth: 550 }} aria-label="simple table">
+        <Table sx={{ minWidth: 700 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell colSpan={2}>

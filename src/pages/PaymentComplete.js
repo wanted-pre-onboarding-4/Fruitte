@@ -24,17 +24,6 @@ const PaymentComplet = () => {
     user_info: userInfo,
   } = data;
 
-  console.log(
-    deliveryFee,
-    discountRate,
-    orderId,
-    paymentWay,
-    productAmount,
-    productiImage,
-    productName,
-    productpPrice
-  );
-
   const goToPrevPage = () => {
     navigate(-1);
   };

@@ -7,8 +7,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Button from '@mui/material/Button';
-
+import AddIcon from '@mui/icons-material/Add';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 const PaymentCompletSection = ({
   getRandomDate,
   deliveryFee,
@@ -67,26 +67,31 @@ const PaymentCompletSection = ({
               <TableCell align="center">
                 <Delivery>
                   <DeleiverStatus>배송완료</DeleiverStatus>
-                  <DeliveryInfo>
-                    {paymentWay} 배송비 / {deliveryFee}원
-                  </DeliveryInfo>
-                  <Button
-                    size="small"
-                    style={{
-                      maxWidth: '100px',
-                    }}
-                  >
-                    재구매
-                  </Button>
+                  <DeliveryInfo>배송비 / {deliveryFee}원</DeliveryInfo>
                 </Delivery>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
-                <TableFooterContents> 결제 정보</TableFooterContents>
+                <TableFooterContents>결제 정보</TableFooterContents>
               </TableCell>
               <TableCell align="center">
-                <InfoBold>{productpPrice + deliveryFee}</InfoBold>'
+                <ProductPriceInfo>
+                  <ProductPrice>
+                    <InfoBold>{productpPrice}</InfoBold>
+                    상품가격
+                  </ProductPrice>
+                  <AddIcon />
+                  <DeliveryPrice>
+                    <InfoBold>{deliveryFee}</InfoBold>
+                    배송비
+                  </DeliveryPrice>
+                  <ArrowRightAltIcon />
+                  <TotalPrice>
+                    <InfoBold>{productpPrice + deliveryFee}</InfoBold>
+                    {paymentWay} 결제
+                  </TotalPrice>
+                </ProductPriceInfo>
               </TableCell>
             </TableRow>
           </TableBody>
@@ -100,7 +105,6 @@ const OrderProductInfo = styled.div`
 `;
 
 const InfoBold = styled.div`
-  margin-left: 8px;
   font-weight: 600;
   font-size: 16px;
 `;
@@ -187,8 +191,13 @@ const TableFooterContents = styled.div`
   font-size: 18px;
 `;
 
-// const CalcPrice = styled.div`
-//   display: flex;
-// `;
+const TotalPrice = styled.div``;
+const ProductPrice = styled.div``;
+const DeliveryPrice = styled.div``;
 
+const ProductPriceInfo = styled.div`
+  justify-content: center;
+
+  display: flex;
+`;
 export default PaymentCompletSection;
