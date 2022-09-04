@@ -1,18 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 import styled from 'styled-components';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import productAtom from '../../../store/productAtom';
-import ProductData from '../../../data/product.json';
 
-import { useEffect } from 'react';
 export default function Card({ product }) {
   const setProductData = useSetRecoilState(productAtom);
-  const Totalproduct = useRecoilValue(productAtom);
-  const [changeProduct, setChangeProduct] = useState(product);
-  useEffect(() => {});
   function clickHander(e) {
     console.log(product);
     setProductData();
