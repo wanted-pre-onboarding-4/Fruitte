@@ -23,8 +23,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "2",
@@ -55,8 +56,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "3",
@@ -87,8 +89,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "4",
@@ -114,8 +117,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "5",
@@ -146,8 +150,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "6",
@@ -178,8 +183,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "7",
@@ -205,8 +211,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "8",
@@ -237,8 +244,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "9",
@@ -269,8 +277,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "10",
@@ -296,8 +305,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "11",
@@ -328,8 +338,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "12",
@@ -360,8 +371,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "13",
@@ -387,8 +399,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "14",
@@ -419,8 +432,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "15",
@@ -451,8 +465,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "16",
@@ -478,8 +493,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "17",
@@ -510,8 +526,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "18",
@@ -542,8 +559,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "19",
@@ -569,8 +587,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "20",
@@ -601,8 +620,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "21",
@@ -633,8 +653,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "22",
@@ -660,8 +681,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "23",
@@ -692,8 +714,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "24",
@@ -724,8 +747,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "25",
@@ -751,8 +775,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "26",
@@ -783,8 +808,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "27",
@@ -815,8 +841,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "28",
@@ -842,8 +869,9 @@
     "likes": 20,
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "29",
@@ -874,8 +902,9 @@
     "likes": 14,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "30",
@@ -906,8 +935,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "31",
@@ -938,8 +968,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "32",
@@ -970,8 +1001,9 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   },
   {
     "product_id": "33",
@@ -1002,7 +1034,8 @@
     "likes": 980,
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
-    "delevery_way": "택배",
-    "isShown": true
+    "delivery_way": "택배",
+    "isShown": true,
+    "isLiked": false
   }
 ]
