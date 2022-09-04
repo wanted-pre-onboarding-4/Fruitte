@@ -12,9 +12,12 @@ export default function List() {
   return (
     <>
       <Container>
-        {product.slice(offset, offset + 10).map((product, index) => {
-          return <Card key={index} product={product} />;
-        })}
+        {product
+          .filter(product => product.isShown === true)
+          .slice(offset, offset + 10)
+          .map((product, index) => {
+            return <Card key={index} product={product} />;
+          })}
       </Container>
       <Pagination total={product.length} limit={10} page={page} setPage={setPage} />
     </>

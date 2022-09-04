@@ -23,7 +23,7 @@
     "product_origin": "인천광역시 남동구",
     "delivery_fee": 4000,
     "delivery_way": "택배",
-    "isShown": true,
+    "isShown": false,
     "isLiked": false
   },
   {
@@ -89,7 +89,7 @@
     "product_origin": "인천광역시 부평구",
     "delivery_fee": 4000,
     "delivery_way": "택배",
-    "isShown": true,
+    "isShown": false,
     "isLiked": false
   },
   {
