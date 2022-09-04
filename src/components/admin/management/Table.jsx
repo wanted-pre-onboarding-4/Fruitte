@@ -61,7 +61,7 @@ const Table = ({ productList }) => {
           product={product}
         ></TableItem>
       ))}
-      <Button onClick={onItemsDeleteClick}>전체 삭제</Button>
+      <Button onClick={onItemsDeleteClick}>선택 삭제</Button>
     </Container>
   );
 };
