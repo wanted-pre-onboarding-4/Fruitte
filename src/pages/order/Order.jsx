@@ -9,14 +9,14 @@ const DUMMY_PRODUCT = {
   product_amount: 1,
   product_price: 96000,
   discount_rate: 1000,
-  delivery_fee : 1000
+  delivery_fee: 1000,
 };
 
 const Order = () => {
   return (
     <Main>
-      <OrderList data={DUMMY_PRODUCT}/>
-      <OrderInfo data={DUMMY_PRODUCT}/>
+      <OrderList data={DUMMY_PRODUCT} />
+      <OrderInfo data={DUMMY_PRODUCT} />
     </Main>
   );
 };
