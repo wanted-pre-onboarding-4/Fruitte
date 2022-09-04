@@ -76,7 +76,7 @@ const TableItem = ({ product, setDeleteItems }) => {
         <img src={product.product_image[0]} />
       </ImageWrapper>
       <ItemWrapper>{product.product_name}</ItemWrapper>
-      <ItemWrapper>{product.product_price}</ItemWrapper>
+      <ItemWrapper>{product.product_price}원</ItemWrapper>
       <ToggleBtnWrapper>
         <SaleStateToggleBtn id={product.product_id} isShown={product.isShown} />
         <span>{product.isShown ? '판매중' : '판매중지'}</span>

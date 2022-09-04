@@ -5,6 +5,7 @@ import productAtom from '../../../store/productAtom';
 import TableItem from './TableItem';
 
 const Container = styled.ul`
+  min-width: 80vw;
   width: 80vw;
   margin: 0 auto;
 `;

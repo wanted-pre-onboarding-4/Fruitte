@@ -24,7 +24,8 @@ function App() {
         <Route path="/fruitstore/:product_id" element={<div>상품 상세 페이지</div>} />
         <Route path="/shop_payment/:product_id" element={<div>상품 주문 페이지</div>} />
         <Route path="/shop_payment/complete" element={<div>주문 내역 확인 페이지</div>} />
-        <Route path="/admin" element={<AuthManagement />} />
+        <Route path="/admin" element={<div>관리자 등록페이지</div>} />
+        <Route path="/admin/management" element={<AuthManagement />} />
       </Routes>
     </BrowserRouter>
   );
