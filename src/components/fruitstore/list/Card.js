@@ -34,7 +34,11 @@ export default function Card({ product }) {
     <CardBox>
       <Link to={`/fruitstore/${product.product_id}`} state={{ product: product }}>
         <ProductImg width="250px" height="150px" src={product.product_image[0]} />
-        <ProductName>{product.product_name}</ProductName>
+        <ProductName>
+          {product.product_name.length > 15
+            ? product.product_name.slice(0, 20) + '....'
+            : product.product_name}
+        </ProductName>
         <TagBox>
           {product.product_tags.map((tag, index) => {
             return (
@@ -65,10 +69,6 @@ export default function Card({ product }) {
           <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
         </div>
       </div>
-      <DeleiverBox>
-        <DeleiverText>배송방식:{product.delivery_way}</DeleiverText>
-        <DeleiverText>배송비:{product.delivery_fee}</DeleiverText>
-      </DeleiverBox>
     </CardBox>
   );
 }
@@ -77,7 +77,9 @@ const ProductName = styled.div`
   font-size: 20px;
   font-weight: 500;
   width: 250px;
+  height: 70px;
   margin-bottom: 30px;
+  overflow: hidden;
   padding-top: 15px;
 `;
 const TagBox = styled.div`
@@ -108,17 +110,4 @@ const Tag = styled.div`
   color: ${props => props.fontcolor};
   padding: 5px;
   border-radius: 5px;
-`;
-
-const DeleiverBox = styled.div`
-  display: flex;
-  background-color: lavender;
-  justify-content: space-around;
-  border-radius: 60px;
-  margin-top: 15px;
-  width: 250px;
-`;
-const DeleiverText = styled.div`
-  margin: 15px 0 15px 5px;
-  font-weight: 800;
 `;
