@@ -18,9 +18,13 @@ function RegisterInfo() {
   const handleOnChange = e => {
     setProductInfo(cur => {
       const newProductInfo = { ...cur };
-      if (e.target.name !== 'product_name' && e.target.name !== 'prdocut_description')
-        newProductInfo[e.target.name] = parseInt(e.target.value);
-      else newProductInfo[e.target.name] = e.target.value;
+      if (e.target.name !== 'product_name' && e.target.name !== 'prdocut_description') {
+        if (e.target.value === '') {
+          newProductInfo[e.target.name] = 0;
+        } else {
+          newProductInfo[e.target.name] = parseInt(e.target.value);
+        }
+      } else newProductInfo[e.target.name] = e.target.value;
       return newProductInfo;
     });
   };
@@ -78,6 +82,7 @@ function RegisterInfo() {
         productKey={'product_price'}
         productValue={productInfo.product_price}
         handleOnChange={handleOnChange}
+        onKeyUp="this.value=this.value.replace(/[^0-9]/g,'');"
       ></RegisterInput>
       <RegisterInput
         boxTitle={'할인률'}
@@ -86,6 +91,7 @@ function RegisterInfo() {
         productKey={'discount_rate'}
         productValue={productInfo.discount_rate}
         handleOnChange={handleOnChange}
+        onKeyUp="this.value=this.value.replace(/[^0-9]/g,'');"
       ></RegisterInput>
       <RegisterInput
         boxTitle={'재고수량'}
@@ -94,6 +100,7 @@ function RegisterInfo() {
         productKey={'product_amount'}
         productValue={productInfo.product_amount}
         handleOnChange={handleOnChange}
+        onKeyUp="this.value=this.value.replace(/[^0-9]/g,'');"
       ></RegisterInput>
       <RegisterOption
         handleOptionAdd={handleOptionAdd}
