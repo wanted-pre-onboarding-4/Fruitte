@@ -2,14 +2,14 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import productAtom from '../../../store/productAtom';
 import { useRecoilValue } from 'recoil';
-import * as S from './FruitStoreDetail.styles';
+import * as S from './ProductDetail.styles';
 import Dropdown from './DropDown';
 import Slide from './Slide';
 import SelectItem from './SelectItem';
 import Button01 from '../../commons/buttons/Button01';
 import { getUrl } from '../../../utils/getUrl';
 
-export default function FruitStoreDetail() {
+export default function ProductDetail() {
   const { product_id } = useParams();
   const productList = useRecoilValue(productAtom);
   const [data, setData] = useState();
@@ -58,7 +58,11 @@ export default function FruitStoreDetail() {
             <S.Title>
               <S.Name>{data?.product_name}</S.Name>
               <S.LikeAndShare>
-                <S.Like>
+                <S.Like
+                  onClick={() => {
+                    alert('로그인 후 이용 가능한 서비스입니다');
+                  }}
+                >
                   <img alt="like" src="/heart.png" />
                   {data?.likes}
                 </S.Like>

@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import Header from './components/commons/Header';
 import productAtom from './store/productAtom';
-import FruitStoreDetailPage from './pages/fruitstore/[product_id]';
 import orderAtom from './store/orderAtom';
 import GlobalStyle from './styles/Globalstyles';
 import ProductData from './data/product.json';
@@ -14,6 +13,7 @@ import OrderData from './data/order.json';
 import PaymentComplet from './pages/PaymentComplete';
 import AuthRegister from './pages/admin/AuthRegister';
 import Footer from './components/commons/Footer';
+import Detail from './pages/detail/Detail';
 
 function App() {
   const setProductData = useSetRecoilState(productAtom);
@@ -32,7 +32,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/fruitstore" />} />
-        <Route path="/fruitstore/:product_id" element={<FruitStoreDetailPage />} />
+        <Route path="/fruitstore/:product_id" element={<Detail />} />
         <Route path="/fruitstore" element={<ListPage />} />
         <Route path="/shop_payment/:product_id" element={<Order />} />
         <Route path="/admin" element={<div>관리자 등록페이지</div>} />

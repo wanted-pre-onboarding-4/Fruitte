@@ -70,9 +70,9 @@ const Wrap = styled.div`
 `;
 
 const Selected = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 4fr 3fr 1.5fr 0.5fr;
   align-items: center;
-  justify-content: space-between;
 `;
 
 const SelectedOption = styled.div``;
@@ -82,7 +82,6 @@ const DeleteOption = styled.div`
   width: 20px;
   height: 20px;
   position: relative;
-  text-indent: -9999px;
   ::before,
   ::after {
     content: '';
@@ -91,8 +90,7 @@ const DeleteOption = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
-    border-radius: 4px;
-    background: #000;
+    background: ${Colors.BLACK};
   }
   ::before {
     transform: translate(-50%, -50%) rotate(-45deg);

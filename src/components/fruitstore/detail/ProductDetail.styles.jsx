@@ -56,8 +56,10 @@ export const LikeAndShare = styled.div`
 `;
 
 export const Like = styled.div`
-  margin-right: 12px;
+  margin-right: 10px;
   font-size: 14px;
+  text-align: center;
+  cursor: pointer;
   img {
     width: 25px;
     height: 25px;
