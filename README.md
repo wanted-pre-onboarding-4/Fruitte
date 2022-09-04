@@ -12,8 +12,6 @@
 
 ## :nut_and_bolt: 서비스 설명
 
-
-
 ## 📋 프로젝트 구조
 
 [여기에 프로젝트 구조 ]
@@ -25,8 +23,6 @@
 ### 🖌 와이어프레임
 
 [Fruitte-Figma](https://www.figma.com/file/WNwP0R0Dd77etq8lMJpLbK/Untitled?node-id=0%3A1)
-
-
 
 ## :handshake: 프로젝트 팀원
 
