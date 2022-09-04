@@ -1,0 +1,24 @@
+[
+  {
+    "order_id": "qwerr12345",
+    "product_id": "5",
+    "product_name": "상품 이름",
+    "product_price": 49000,
+    "product_image": "https://picsum.photos/200/300",
+    "discount_rate": 20,
+    "product_amount": 100,
+    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "delivery_fee": 4000,
+    "payment_way": "택배",
+    "user_info": {
+      "name": "홍길동",
+      "phone_number": "010-1234-5678",
+      "email": "wanted@gmail.com"
+    },
+    "delivery_info": {
+      "post_number": 26749,
+      "address": "인천광역시 부평구 어딘가",
+      "detail_address": "행복 아파트 101호 1202호"
+    }
+  }
+]

@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Assginment #2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🎯 프로젝트 목표
 
-## Available Scripts
+#### Fruitte 스토어 리뉴얼 개발
 
-In the project directory, you can run:
+## ⏰ 프로젝트 기간
 
-### `npm start`
+#### 2022-09-02 ~ 2022-09-04
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :link: 프로젝트 링크
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[여기에 링크]
 
-### `npm test`
+## :nut_and_bolt: 구현 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+사용자 기능
 
-### `npm run build`
+- [x] 스토어 상품목록 조회(30개 이상의 상품목록, 10개 단위의 페이지네이션, 인피니트 스크롤 X)
+- [x] 스토어 상품 상세조회(이미지, 상품 옵션, 수량, 가격 등)
+- [x] 스토어 상품 주문
+- [x] 스토어 상품 주문 내역확인 (주문 번호, 상품명, 주문 수량, 주문 옵션)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+관리자 기능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [x] 스토어 상품목록 등록 페이지(이미지, 상품 옵션, 수량, 가격 등)
+- [x] 상품 삭제 기능
+- [x] 상품 노출 여부 조정 기능(상품은 유지되어 있되, 노출 여부를 수정하는 기능)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :hammer: 사용 스택
 
-### `npm run eject`
+![ReactJS](https://img.shields.io/badge/ReactJS-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Styled-Components](https://img.shields.io/badge/StyledComponents-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)![Recoil](https://img.shields.io/badge/Recoil-007af4?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI1MDAiIHdpZHRoPSIyMzY4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjMwIDExIDI3LjUgNzgiPjxyZWN0IGZpbGw9IiMwMDdhZjQiIGhlaWdodD0iOTUiIHJ4PSIxMCIgd2lkdGg9IjkwIi8+PGNpcmNsZSBjeD0iNDMuNSIgY3k9IjE4LjUiIGZpbGw9IiNmZmYiIHI9IjcuNSIvPjxjaXJjbGUgY3g9IjQzLjUiIGN5PSI4MS41IiBmaWxsPSIjZmZmIiByPSI3LjUiLz48ZyBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyI+PHBhdGggZD0iTTQzLjk5OSAyNUM0Mi41IDM3IDU3LjUgMzQgNTcuNSA0Mi41YzAgNS01Ljg3OCA2LjM2NS0xMy41MDEgN0MzNy45OTkgNTAgMzAgNTAgMzAgNThzMTYgNS41IDEzLjk5OSAxN00zNC4xMzIgMzMuMzUzYzAgMTUuMjg5IDIzLjE1IDE4LjI4OSAyMy4xNSAzMi42MiIvPjwvZz48L3N2Zz4=&logoColor=white)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Recoil
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+API 통신이 불가능한 상황에서 데이터를 실시간으로 처리하는 기능을 어떻게 구현할 수 있을까에 대한 고민이 있었습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+저희 프로젝트에서 Mock Data는 상수로 선언이 되어 있었고 이 데이터를 전역 상태로 관리하면 동적으로 처리할 수 있을 것 같다고 생각하여 **Recoil** 도입을 결정하게 됐습니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 프로젝트 구조
 
-## Learn More
+```bash
+src
+├─components
+│ ├─admin
+│ │ └─management
+│ ├─commons
+│ │ ├─buttons
+│ │ └─inputs
+│ └─fruitstore
+│ ├─detail
+│ ├─list
+│ ├─order
+│ │ └─order_info
+│ └─orderComplete
+├─data
+├─pages
+│ ├─admin
+│ ├─fruitstore
+│ │ └─[product_id]
+│ └─order
+├─store
+├─styles
+└─utils
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🖌 와이어프레임
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Fruitte-Figma](https://www.figma.com/file/WNwP0R0Dd77etq8lMJpLbK/Untitled?node-id=0%3A1)
 
-### Code Splitting
+## :handshake: 프로젝트 팀원
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| 이름   |          역할           |
+| ------ | :---------------------: |
+| 설재혁 | 여기에 기여한 부분 적기 |
+| 김명원 | 관리자 management 페이지, 상품 mock 데이터 수정 |
+| 박보선 |                         |
+| 김지혜 |                         |
+| 이시형 |                         |
+| 홍주완 | 상품목록 전체 보여주는 페이지 담당 ,상품 mock 데이터 수정               |
+| 이후경 |                         |
 
-### Analyzing the Bundle Size
+## 🖥 Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. `Clone` the repository
 
-### Making a Progressive Web App
+   ```markdown
+   $ git clone https://github.com/wanted-pre-onboarding-4/Fruitte.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. `Install` dependencies
 
-### Advanced Configuration
+   ```markdown
+   $ npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. `start` the project
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```markdown
+   $ npm start
+   ```
