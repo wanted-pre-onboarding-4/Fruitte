@@ -1,6 +1,5 @@
 import React from 'react';
-import orderAtom from '../../../store/orderAtom';
-import { useRecoilState } from 'recoil';
+
 import styled from 'styled-components';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,9 +7,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-const Reciever = () => {
-  const [order] = useRecoilState(orderAtom);
-
+const Reciever = ({ deliveryInfo }) => {
+  console.log(deliveryInfo.address);
   return (
     <BuyerInfoWrapper>
       <TableContainer>
@@ -31,7 +29,7 @@ const Reciever = () => {
               </TableCell>
               <TableCell align="center">
                 <Delivery>
-                  <DeleiverStatus>{order[0].delivery_info.post_number}</DeleiverStatus>
+                  <DeleiverStatus>{deliveryInfo.address}</DeleiverStatus>
                 </Delivery>
               </TableCell>
             </TableRow>
@@ -43,7 +41,7 @@ const Reciever = () => {
               </TableCell>
               <TableCell align="center">
                 <Delivery>
-                  <DeleiverStatus>{order[0].delivery_info.address}</DeleiverStatus>
+                  <DeleiverStatus>{deliveryInfo.detail_address}</DeleiverStatus>
                 </Delivery>
               </TableCell>
             </TableRow>
@@ -55,7 +53,7 @@ const Reciever = () => {
               </TableCell>
               <TableCell align="center">
                 <Delivery>
-                  <DeleiverStatus>{order[0].delivery_info.detail_address}</DeleiverStatus>
+                  <DeleiverStatus>{deliveryInfo.post_number}</DeleiverStatus>
                 </Delivery>
               </TableCell>
             </TableRow>

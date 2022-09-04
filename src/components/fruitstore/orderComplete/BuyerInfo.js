@@ -1,6 +1,4 @@
 import React from 'react';
-import orderAtom from '../../../store/orderAtom';
-import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,9 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-const BuyerInfo = () => {
-  const [order] = useRecoilState(orderAtom);
-  console.log(order);
+const BuyerInfo = ({ userInfo }) => {
   return (
     <BuyerInfoWrapper>
       <TableContainer>
@@ -24,22 +20,6 @@ const BuyerInfo = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {/* {Object.values(order[0].user_info).map(buyerInfo => {
-              return (
-                <TableRow>
-                  <TableCell>
-                    <Delivery>
-                      <DeleiverStatus>이름</DeleiverStatus>
-                    </Delivery>
-                  </TableCell>
-                  <TableCell align="center">
-                    <Delivery>
-                      <DeleiverStatus>{order[0].user_info.name}</DeleiverStatus>
-                    </Delivery>
-                  </TableCell>
-                </TableRow>
-              );
-            })} */}
             <TableRow>
               <TableCell>
                 <Delivery>
@@ -48,7 +28,7 @@ const BuyerInfo = () => {
               </TableCell>
               <TableCell align="center">
                 <Delivery>
-                  <DeleiverStatus>{order[0].user_info.name}</DeleiverStatus>
+                  <DeleiverStatus>{userInfo.name}</DeleiverStatus>
                 </Delivery>
               </TableCell>
             </TableRow>
@@ -60,7 +40,7 @@ const BuyerInfo = () => {
               </TableCell>
               <TableCell align="center">
                 <Delivery>
-                  <DeleiverStatus>{order[0].user_info.phone_number}</DeleiverStatus>
+                  <DeleiverStatus>{userInfo.phone_number}</DeleiverStatus>
                 </Delivery>
               </TableCell>
             </TableRow>
@@ -72,7 +52,7 @@ const BuyerInfo = () => {
               </TableCell>
               <TableCell align="center">
                 <Delivery>
-                  <DeleiverStatus>{order[0].user_info.email}</DeleiverStatus>
+                  <DeleiverStatus>{userInfo.email}</DeleiverStatus>
                 </Delivery>
               </TableCell>
             </TableRow>

@@ -1,6 +1,5 @@
 import React from 'react';
-import orderAtom from '../../../store/orderAtom';
-import { useRecoilState } from 'recoil';
+
 import styled from 'styled-components';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,11 +8,19 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Button from '@mui/material/Button';
-// import Paper from '@mui/material/Paper';
 
-const PaymentCompletSection = ({ getRandomDate }) => {
-  const [order] = useRecoilState(orderAtom);
-
+const PaymentCompletSection = ({
+  getRandomDate,
+  deliveryFee,
+  discountRate,
+  orderId,
+  paymentWay,
+  productAmount,
+  productiImage,
+  productName,
+  productpPrice,
+}) => {
+  console.log(discountRate);
   return (
     <OrderProductInfo>
       <TableContainer>
@@ -30,66 +37,56 @@ const PaymentCompletSection = ({ getRandomDate }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {order.map(order => (
-              <TableRow key={order.order_id}>
-                <TableCell component="th" scope="row">
-                  <OrderProductDetailContents>
-                    <ImageWrapper>
-                      <OrderProductImage src={order.product_image}></OrderProductImage>
-                    </ImageWrapper>
-                    <OrderProductText>
-                      <OrderProductDetailInfo>
-                        <OrderInfo>
-                          주문번호 <OrderInfoBold>{order.order_id}</OrderInfoBold>
-                        </OrderInfo>
-                        <OrderInfo>
-                          주문날짜<OrderInfoBold>{getRandomDate()}</OrderInfoBold>
-                        </OrderInfo>
-                      </OrderProductDetailInfo>
-                      <OrderProductDetailInfo>
-                        <ProductName>{order.product_name}</ProductName>
-                        {order.prdocut_description}
-                      </OrderProductDetailInfo>
-                      <OrderPriceQuantity>
-                        <PrevPrice>{order.product_price}원</PrevPrice>
-                        <CurrPrice>
-                          {order.product_price - (order.product_price * order.discount_rate) / 100}
-                          원
-                        </CurrPrice>
-                        / 수량 {order.product_amount}개
-                      </OrderPriceQuantity>
-                    </OrderProductText>
-                  </OrderProductDetailContents>
-                </TableCell>
+            <TableRow>
+              <TableCell component="th" scope="row">
+                <OrderProductDetailContents>
+                  <ImageWrapper>
+                    <OrderProductImage src={productiImage}></OrderProductImage>
+                  </ImageWrapper>
+                  <OrderProductText>
+                    <OrderProductDetailInfo>
+                      <OrderInfo>
+                        주문번호 <OrderInfoBold>{orderId}</OrderInfoBold>
+                      </OrderInfo>
+                      <OrderInfo>
+                        주문날짜<OrderInfoBold>{getRandomDate()}</OrderInfoBold>
+                      </OrderInfo>
+                    </OrderProductDetailInfo>
+                    <OrderProductDetailInfo>
+                      <ProductName>{productName}</ProductName>
+                    </OrderProductDetailInfo>
+                    <OrderPriceQuantity>
+                      <PrevPrice>{productpPrice}원</PrevPrice>
+                      <CurrPrice>{productpPrice - discountRate}원</CurrPrice>/ 수량 {productAmount}
+                      개
+                    </OrderPriceQuantity>
+                  </OrderProductText>
+                </OrderProductDetailContents>
+              </TableCell>
 
-                <TableCell align="center">
-                  <Delivery>
-                    <DeleiverStatus>배송완료</DeleiverStatus>
-                    <DeliveryInfo>
-                      {order.payment_way} / {order.delivery_fee}원
-                    </DeliveryInfo>
-                    <Button
-                      size="small"
-                      style={{
-                        maxWidth: '100px',
-                      }}
-                    >
-                      재구매
-                    </Button>
-                  </Delivery>
-                </TableCell>
-              </TableRow>
-            ))}
-
+              <TableCell align="center">
+                <Delivery>
+                  <DeleiverStatus>배송완료</DeleiverStatus>
+                  <DeliveryInfo>
+                    {paymentWay} 배송비 / {deliveryFee}원
+                  </DeliveryInfo>
+                  <Button
+                    size="small"
+                    style={{
+                      maxWidth: '100px',
+                    }}
+                  >
+                    재구매
+                  </Button>
+                </Delivery>
+              </TableCell>
+            </TableRow>
             <TableRow>
               <TableCell>
                 <TableFooterContents> 결제 정보</TableFooterContents>
               </TableCell>
-              <TableCell>
-                <CalcPrice>
-                  <InfoBold>ㅇㅇㅇㅇㅇ</InfoBold>
-                  <InfoBold>ㅇㅇㅇㅇㅇ</InfoBold>
-                </CalcPrice>
+              <TableCell align="center">
+                <InfoBold>{productpPrice + deliveryFee}</InfoBold>'
               </TableCell>
             </TableRow>
           </TableBody>
@@ -190,8 +187,8 @@ const TableFooterContents = styled.div`
   font-size: 18px;
 `;
 
-const CalcPrice = styled.div`
-  display: flex;
-`;
+// const CalcPrice = styled.div`
+//   display: flex;
+// `;
 
 export default PaymentCompletSection;
