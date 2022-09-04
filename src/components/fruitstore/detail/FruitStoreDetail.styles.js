@@ -51,9 +51,24 @@ export const Name = styled.h1`
   padding-right: 40px;
 `;
 
+export const LikeAndShare = styled.div`
+  display: flex;
+`;
+
+export const Like = styled.div`
+  margin-right: 12px;
+  font-size: 14px;
+  img {
+    width: 25px;
+    height: 25px;
+  }
+`;
 export const Share = styled.div`
-  width: 40px;
   cursor: pointer;
+  img {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 export const Description = styled.div`
@@ -127,12 +142,12 @@ export const Row = styled.div`
 `;
 
 export const Label = styled.div`
-  width: 150px;
+  width: 120px;
   color: ${Colors.GRAY_1};
 `;
 
 export const Content = styled.div`
-  width: calc(100% -150px);
+  width: calc(100% -10px);
 `;
 export const TotalPriceWrap = styled.div`
   display: flex;

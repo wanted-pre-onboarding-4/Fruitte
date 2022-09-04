@@ -10,7 +10,7 @@ export default function SelectItem({ item, setTotalPrice, setPick, pick, index }
 
   const temp = [...pick];
 
-  const onClickMinus = () => {
+  const onClickDown = () => {
     if (option.amount === 1) {
       alert('최소 주문 수량은 1개입니다');
       return;
@@ -24,7 +24,7 @@ export default function SelectItem({ item, setTotalPrice, setPick, pick, index }
     setTotalPrice(prev => prev - Number(item.option_price));
   };
 
-  const onClickPlus = () => {
+  const onClickUp = () => {
     temp[index].option_amount = temp[index].option_amount + 1;
     setPick(temp);
     setOption({
@@ -43,22 +43,22 @@ export default function SelectItem({ item, setTotalPrice, setPick, pick, index }
     <Wrap>
       <Selected>
         <SelectedOption>{item.option_title}</SelectedOption>
+        <ButtonWrap>
+          <button onClick={onClickDown}>
+            <span className="down"></span>
+          </button>
+          <input type="number" value={option.amount} readOnly />
+          <button onClick={onClickUp}>
+            <span className="up"></span>
+          </button>
+        </ButtonWrap>
+        <TotalPrice>{option.price.toLocaleString()}원</TotalPrice>
         <DeleteOption
           onClick={() => {
             onClickDelete(item);
           }}
-        >
-          X
-        </DeleteOption>
+        ></DeleteOption>
       </Selected>
-      <Price>
-        <ButtonWrap>
-          <button onClick={onClickMinus}>----</button>
-          <span>{option.amount}</span>
-          <button onClick={onClickPlus}>+++++</button>
-        </ButtonWrap>
-        <TotalPrice>{option.price}</TotalPrice>
-      </Price>
     </Wrap>
   );
 }
@@ -71,19 +71,81 @@ const Wrap = styled.div`
 
 const Selected = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  border-bottom: 1px dashed ${Colors.GRAY_3};
-  padding-bottom: 10px;
 `;
 
 const SelectedOption = styled.div``;
 
 const DeleteOption = styled.div`
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  text-indent: -9999px;
+  ::before,
+  ::after {
+    content: '';
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 4px;
+    background: #000;
+  }
+  ::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  ::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
 `;
 
-const Price = styled.div``;
-
-const ButtonWrap = styled.div``;
+const ButtonWrap = styled.div`
+  display: flex;
+  width: 90px;
+  height: 30px;
+  border: 1px solid ${Colors.GRAY_3};
+  input {
+    width: 30px;
+    text-align: center;
+  }
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  button {
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+    position: relative;
+    span {
+      ::after {
+        content: '';
+        width: 10px;
+        height: 1px;
+        background: #666;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    span.up {
+      ::before {
+        content: '';
+        width: 1px;
+        height: 10px;
+        background: #666;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+`;
 
 const TotalPrice = styled.div``;

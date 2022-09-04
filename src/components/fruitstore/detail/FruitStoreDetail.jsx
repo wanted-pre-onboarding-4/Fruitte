@@ -53,13 +53,19 @@ export default function FruitStoreDetail() {
           <S.TitleWrap>
             <S.Title>
               <S.Name>{data?.product_name}</S.Name>
-              <S.Share
-                onClick={() => {
-                  alert(`${getUrl(window.location.href).content}`);
-                }}
-              >
-                <img src="https://whoau.com/morenvyimg/detail_shere.svg" alt="share" />
-              </S.Share>
+              <S.LikeAndShare>
+                <S.Like>
+                  <img alt="like" src="/heart.png" />
+                  {data?.likes}
+                </S.Like>
+                <S.Share
+                  onClick={() => {
+                    alert(`${getUrl(window.location.href).content}`);
+                  }}
+                >
+                  <img src="https://whoau.com/morenvyimg/detail_shere.svg" alt="share" />
+                </S.Share>
+              </S.LikeAndShare>
             </S.Title>
             <S.Description>{data?.prdocut_description} </S.Description>
           </S.TitleWrap>
