@@ -11,24 +11,24 @@
     "product_tags": ["BEST", "MD", "판매대기"],
     "product_options": [
       {
-        "option_title": "2kg",
+        "option_title": "2kg 한 상자 (50개 내외)",
         "option_price": 27000,
         "is_sold_out": false
       },
       {
-        "option_title": "4kg",
+        "option_title": "4kg 한 상자 (100개 내외)",
         "option_price": 50000,
         "is_sold_out": false
       },
       {
-        "option_title": "6kg",
-        "option_price": 60000,
+        "option_title": "6kg 한 상자 (150개 내외)",
+        "option_price": 68000,
         "is_sold_out": false
       }
     ],
     "likes": 20,
-    "product_origin": "인천광역시 남동구",
-    "delivery_fee": 4000,
+    "product_origin": "충청북도 거창군",
+    "delivery_fee": 3000,
     "delivery_way": "택배",
     "isShown": false,
     "isLiked": false
@@ -36,32 +36,37 @@
   {
     "product_id": "2",
     "user_id": "2",
-    "product_name": "상품 이름 2",
-    "product_price": 10000,
+    "product_name": "무농약 GAP 인증 국산 청양 블루베리 2kg, 4kg, 5kg",
+    "product_price": 120000,
     "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://cdn.imweb.me/thumbnail/20220622/24231acb3b26d.jpg",
+      "https://cdn.imweb.me/thumbnail/20220622/14552ecdda638.jpg",
+      "https://cdn.imweb.me/thumbnail/20220622/bd5f99cee136e.jpg"
     ],
-    "discount_rate": 30,
+    "discount_rate": 10,
     "product_amount": 100,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
-    "product_tags": ["BEST", "SALE"],
+    "prdocut_description": "충남의 알프스라 불리는 청정지역 청양에서 무농약으로 재배한 생 블루베리",
+    "product_tags": ["BEST", "SALE", "SOLDOUT"],
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000,
-        "is_sold_out": false
+        "option_price": 108000,
+        "is_sold_out": true
       },
       {
-        "option_title": "3kg",
-        "option_price": 75000,
-        "is_sold_out": false
+        "option_title": "4kg",
+        "option_price": 200000,
+        "is_sold_out": true
+      },
+      {
+        "option_title": "5kg",
+        "option_price": 240000,
+        "is_sold_out": true
       }
     ],
     "likes": 14,
-    "product_origin": "인천광역시 부평구",
-    "delivery_fee": 4000,
+    "product_origin": "충청남도 청양군",
+    "delivery_fee": 0,
     "delivery_way": "택배",
     "isShown": true,
     "isLiked": false
@@ -69,31 +74,27 @@
   {
     "product_id": "3",
     "user_id": "3",
-    "product_name": "상품 이름 3",
-    "product_price": 19700,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
+    "product_name": "국산 강원도 화청 생 아스파라거스 1kg, 2kg",
+    "product_price": 40000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20220622/420f289e15350.jpg"],
     "discount_rate": 15,
-    "product_amount": 0,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "product_amount": 10,
+    "prdocut_description": "미생물을 이용한 친환경 농법으로 길러 더욱 맛있는 국내산 친환경 생 아스파라거스",
     "product_tags": ["BEST", "SALE"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "1kg",
+        "option_price": 34000,
         "is_sold_out": true
       },
       {
         "option_title": "3kg",
-        "option_price": 75000,
+        "option_price": 80000,
         "is_sold_out": true
       }
     ],
     "likes": 980,
-    "product_origin": "인천광역시 부평구",
+    "product_origin": "강원도 화천군",
     "delivery_fee": 4000,
     "delivery_way": "택배",
     "isShown": false,
@@ -102,27 +103,33 @@
   {
     "product_id": "4",
     "user_id": "4",
-    "product_name": "상품 이름 4",
-    "product_price": 20000,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
+    "product_name": "목감기에 좋은 건더기 없는 프리미엄 수제 착즙 유자청",
+    "product_price": 15000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20220610/7902f9ea75514.jpg"],
     "discount_rate": 10,
     "product_amount": 900,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "prdocut_description": "완도 바람 맞고 자란 비타민 가득 유자를 청으로 만나보세요!",
     "product_tags": ["BEST", "SALE", "추천 상품"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "유자청 480g 2병 (960g)",
+        "option_price": 13300,
+        "is_sold_out": false
+      },
+      {
+        "option_title": "유자청 1kg 1병",
+        "option_price": 13500,
+        "is_sold_out": false
+      },
+      {
+        "option_title": "착즙유자 500ml",
+        "option_price": 18800,
         "is_sold_out": false
       }
     ],
     "likes": 20,
-    "product_origin": "인천광역시 남동구",
-    "delivery_fee": 4000,
+    "product_origin": "전라남도 완도",
+    "delivery_fee": 3500,
     "delivery_way": "택배",
     "isShown": true,
     "isLiked": false
@@ -130,32 +137,26 @@
   {
     "product_id": "5",
     "user_id": "5",
-    "product_name": "상품 이름 5",
-    "product_price": 10000,
+    "product_name": "돌다리농원 100% 에산 순수생사과즙 100포(50포x2BOX 묶음상품)",
+    "product_price": 60000,
     "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://cdn.imweb.me/thumbnail/20220714/7a7034b864bd3.jpeg",
+      "https://cdn.imweb.me/thumbnail/20220714/ffbe0a4ffa47d.jpeg"
     ],
-    "discount_rate": 30,
+    "discount_rate": 5,
     "product_amount": 100,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "prdocut_description": "꿀보다 더 달달한 생사과즙으로 아침식사대용, 간식대용으로 하루의 건강과 달콤함을 챙겨보세요!",
     "product_tags": ["BEST", "SALE"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "100포 묶음",
+        "option_price": 57000,
         "is_sold_out": false
-      },
-      {
-        "option_title": "3kg",
-        "option_price": 75000,
-        "is_sold_out": true
       }
     ],
     "likes": 14,
-    "product_origin": "인천광역시 부평구",
-    "delivery_fee": 4000,
+    "product_origin": "충청남도 예산",
+    "delivery_fee": 0,
     "delivery_way": "택배",
     "isShown": true,
     "isLiked": false
@@ -163,31 +164,27 @@
   {
     "product_id": "6",
     "user_id": "6",
-    "product_name": "상품 이름 6",
-    "product_price": 19700,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
-    "discount_rate": 15,
+    "product_name": "반려동물과자 아기과자 동결건조 사과칩 50g (5봉지, 10봉지 묶음상품",
+    "product_price": 80000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20220714/802daf8483428.jpeg"],
+    "discount_rate": 30,
     "product_amount": 0,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "prdocut_description": "NO 제초제, NO 화학비료, NO 불필요한 잎따기를 철저히 지킨 사과의 고장 충남 예산의 건강한 3무 사과를 껍찔째 즐겨보세요!",
     "product_tags": ["BEST", "SALE"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "5봉지",
+        "option_price": 35000,
         "is_sold_out": true
       },
       {
         "option_title": "3kg",
-        "option_price": 75000,
+        "option_price": 65000,
         "is_sold_out": true
       }
     ],
     "likes": 980,
-    "product_origin": "인천광역시 부평구",
+    "product_origin": "충청남도 예산",
     "delivery_fee": 4000,
     "delivery_way": "택배",
     "isShown": true,
@@ -196,27 +193,23 @@
   {
     "product_id": "7",
     "user_id": "7",
-    "product_name": "상품 이름 7",
-    "product_price": 20000,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
-    "discount_rate": 10,
+    "product_name": "100% 제주감귤주스 (15팩 x 1box)",
+    "product_price": 50000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20220521/69f390486a3e3.png"],
+    "discount_rate": 30,
     "product_amount": 900,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
-    "product_tags": ["BEST", "SALE", "추천 상품"],
+    "prdocut_description": "제주 감귤이 고스란히 담긴 주스로 입맛도 돋우고, 건강도 지키세요!",
+    "product_tags": ["BEST", "SALE"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "15팩 1box",
+        "option_price": 35000,
         "is_sold_out": false
       }
     ],
     "likes": 20,
-    "product_origin": "인천광역시 남동구",
-    "delivery_fee": 4000,
+    "product_origin": "제주특별자치도 서귀포시",
+    "delivery_fee": 4500,
     "delivery_way": "택배",
     "isShown": true,
     "isLiked": false
@@ -224,21 +217,17 @@
   {
     "product_id": "8",
     "user_id": "8",
-    "product_name": "상품 이름 8",
-    "product_price": 10000,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
-    "discount_rate": 30,
+    "product_name": "물에 타먹는 제주 수제 감귤칩(10봉지 1BOX)",
+    "product_price": 60000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20220520/873c30ce7d7f4.png"],
+    "discount_rate": 40,
     "product_amount": 100,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
-    "product_tags": ["BEST", "SALE"],
+    "prdocut_description": "상큼함과 달달함이 고루 담겨진 바삭한 감귤칩을 만나보세요. 영양은 그대로~ 언제 어디서나 맛 볼 수 있는 감귤과자!",
+    "product_tags": ["BEST", "MD"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "10봉지 1BOX",
+        "option_price": 36000,
         "is_sold_out": false
       },
       {
@@ -248,8 +237,8 @@
       }
     ],
     "likes": 14,
-    "product_origin": "인천광역시 부평구",
-    "delivery_fee": 4000,
+    "product_origin": "제주특별자치도 서귀포시",
+    "delivery_fee": 4500,
     "delivery_way": "택배",
     "isShown": true,
     "isLiked": false
@@ -257,32 +246,32 @@
   {
     "product_id": "9",
     "user_id": "9",
-    "product_name": "상품 이름 9",
-    "product_price": 19700,
+    "product_name": "청양 전통 수제 간장 500ml, 1L",
+    "product_price": 16000,
     "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://cdn.imweb.me/thumbnail/20220622/cffd1aa63f3f9.jpg",
+      "https://cdn.imweb.me/thumbnail/20220622/be1433c679d82.jpg",
+      "https://cdn.imweb.me/thumbnail/20220622/e0e5cda8ff193.jpg"
     ],
-    "discount_rate": 15,
+    "discount_rate": 20,
     "product_amount": 0,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
-    "product_tags": ["BEST", "SALE"],
+    "prdocut_description": "엄마의 마음으로 건강한 재료들을 엄선하고 준비하여 정성으로 담았습니다.",
+    "product_tags": ["SALE", "MD"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
-        "is_sold_out": true
+        "option_title": "500ml",
+        "option_price": 12800,
+        "is_sold_out": false
       },
       {
-        "option_title": "3kg",
-        "option_price": 75000,
-        "is_sold_out": true
+        "option_title": "1L",
+        "option_price": 25000,
+        "is_sold_out": false
       }
     ],
     "likes": 980,
-    "product_origin": "인천광역시 부평구",
-    "delivery_fee": 4000,
+    "product_origin": "충청남도 청양군",
+    "delivery_fee": 3000,
     "delivery_way": "택배",
     "isShown": true,
     "isLiked": false
@@ -290,26 +279,27 @@
   {
     "product_id": "10",
     "user_id": "10",
-    "product_name": "상품 이름 10",
-    "product_price": 20000,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
-    "discount_rate": 10,
+    "product_name": "전통 재래식 메주로 띄운 수제 된장 1kg, 2kg ",
+    "product_price": 60000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20220622/e1d8e149b8f58.jpg"],
+    "discount_rate": 70,
     "product_amount": 900,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "prdocut_description": "엄마의 마음으로 건강한 재료들을 엄선하고 준비하여 정성으로 담았습니다.",
     "product_tags": ["BEST", "SALE", "추천 상품"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "1kg",
+        "option_price": 18000,
+        "is_sold_out": false
+      },
+      {
+        "option_title": "1kg",
+        "option_price": 32000,
         "is_sold_out": false
       }
     ],
     "likes": 20,
-    "product_origin": "인천광역시 남동구",
+    "product_origin": "충청남도 청양군",
     "delivery_fee": 4000,
     "delivery_way": "택배",
     "isShown": true,
@@ -318,31 +308,30 @@
   {
     "product_id": "11",
     "user_id": "11",
-    "product_name": "상품 이름 11",
-    "product_price": 10000,
+    "product_name": "구기자 발효 수제 고추장 1kg, 2kg",
+    "product_price": 70000,
     "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://cdn.imweb.me/thumbnail/20220622/7fae9ba860789.jpg",
+      "https://cdn.imweb.me/thumbnail/20220622/bbf4a6989371e.jpg"
     ],
     "discount_rate": 30,
     "product_amount": 100,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
+    "prdocut_description": "국내산 청양 콩으로 만들어 더욱 맛있고 건강한 수제 고추장",
     "product_tags": ["BEST", "SALE"],
     "product_options": [
       {
         "option_title": "2kg",
-        "option_price": 50000,
+        "option_price": 49000,
         "is_sold_out": false
       },
       {
         "option_title": "3kg",
-        "option_price": 75000,
+        "option_price": 80000,
         "is_sold_out": true
       }
     ],
     "likes": 14,
-    "product_origin": "인천광역시 부평구",
+    "product_origin": "충청남도 청양군",
     "delivery_fee": 4000,
     "delivery_way": "택배",
     "isShown": true,
