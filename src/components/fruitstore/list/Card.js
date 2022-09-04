@@ -34,6 +34,8 @@ export default function Card({ product }) {
             <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
           </div>
         </div>
+        <div>배송방법:{product.delivery_way}</div>
+        <div>배송비:{product.delivery_fee}</div>
       </CardBox>
     </Link>
   );
