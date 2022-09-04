@@ -32,21 +32,23 @@ export default function Card({ product }) {
   }
   return (
     <CardBox>
-      <Link to={`/fruitstore/${product.product_id}`}>
+      <Link to={`/fruitstore/${product.product_id}`} state={{ product: product }}>
         <ProductImg width="250px" height="150px" src={product.product_image[0]} />
         <ProductName>{product.product_name}</ProductName>
         <TagBox>
-          {product.product_tags.map(tag => {
+          {product.product_tags.map((tag, index) => {
             return (
-              <>
+              <div key={tag}>
                 {tag === 'BEST' ? (
-                  <Tag backcolor="red" fontcolor="white">
+                  <Tag key={tag} backcolor="red" fontcolor="white">
                     {tag}
                   </Tag>
                 ) : (
-                  <Tag backcolor="skyblue">{tag}</Tag>
+                  <Tag key={tag} backcolor="skyblue">
+                    {tag}
+                  </Tag>
                 )}
-              </>
+              </div>
             );
           })}
         </TagBox>
