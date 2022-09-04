@@ -13,7 +13,11 @@ function RegisterOption({ handleOptionAdd, productOption, handleOptionDelete }) 
     setOption(cur => {
       const newOption = { ...cur };
       if (e.target.name === 'option_price') {
-        newOption[e.target.name] = parseInt(e.target.value);
+        if (e.target.value === '') {
+          newOption[e.target.name] = 0;
+        } else {
+          newOption[e.target.name] = parseInt(e.target.value);
+        }
       } else {
         newOption[e.target.name] = e.target.value;
       }
