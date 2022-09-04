@@ -32,7 +32,6 @@ function App() {
         <Route path="/" element={<Navigate to="/fruitstore" />} />
         <Route path="/fruitstore/:product_id" element={<FruitStoreDetailPage />} />
         <Route path="/fruitstore" element={<ListPage />} />
-        <Route path="/fruitstore/:product_id" element={<div>상품 상세 페이지</div>} />
         <Route path="/shop_payment/:product_id" element={<Order />} />
         <Route path="/admin" element={<div>관리자 등록페이지</div>} />
         <Route path="/admin/management" element={<AuthManagement />} />
