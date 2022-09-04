@@ -8,7 +8,7 @@ import Slide from './Slide';
 import SelectItem from './SelectItem';
 import Button01 from '../../commons/buttons/Button01';
 import { getUrl } from '../../../utils/getUrl';
-import { useLocation } from 'react-router-dom';
+
 export default function FruitStoreDetail() {
   const { product_id } = useParams();
   const productList = useRecoilValue(productAtom);
@@ -16,7 +16,7 @@ export default function FruitStoreDetail() {
   const [pick, setPick] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const navigate = useNavigate();
-  const location = useLocation();
+
   useEffect(() => {
     const temp = [...productList];
     const productData = temp.find(el => el.product_id === product_id);
