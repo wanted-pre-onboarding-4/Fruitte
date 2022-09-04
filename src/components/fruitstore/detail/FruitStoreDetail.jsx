@@ -106,7 +106,7 @@ export default function FruitStoreDetail() {
             </S.Row>
             <S.Row>
               <S.Label>배송 방법</S.Label>
-              <S.Content>{data?.delevery_way}</S.Content>
+              <S.Content>{data?.delivery_way}</S.Content>
             </S.Row>
             <S.Row>
               <S.Label>배송비</S.Label>
