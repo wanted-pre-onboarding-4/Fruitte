@@ -28,8 +28,8 @@ function RegisterInput({
 export const ProductInputBox = styled.div`
   width: 754px;
   height: ${props => props.height};
-  border: 1px solid red;
   display: flex;
+  border-bottom: 1px solid #c2d1d9;
 `;
 
 export const TitleBox = styled.div`
@@ -38,7 +38,8 @@ export const TitleBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
+  background-color: #f2f5f7;
+  border-bottom: 1px solid #c2d1d9;
 `;
 
 export const InputBox = styled.div`
@@ -47,12 +48,11 @@ export const InputBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid orange;
 `;
 
 export const ProductInput = styled.input`
   width: 506px;
   height: ${props => props.height};
-  border: 1px solid purple;
+  border: 1px solid #c2d1d9;
 `;
 export default RegisterInput;

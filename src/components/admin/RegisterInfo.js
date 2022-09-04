@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RegisterInput from './RegisterInput';
-import RegisterCheck from './RegisterCheck';
+import RegisterOption from './RegisterOption';
 import TagRegister from './TagRegister';
 import styled from 'styled-components';
 
@@ -21,6 +21,47 @@ function RegisterInfo() {
       if (e.target.name !== 'product_name' && e.target.name !== 'prdocut_description')
         newProductInfo[e.target.name] = parseInt(e.target.value);
       else newProductInfo[e.target.name] = e.target.value;
+      return newProductInfo;
+    });
+  };
+
+  const handleTagAdd = e => {
+    setProductInfo(cur => {
+      const newProductInfo = { ...cur };
+      newProductInfo[e.target.name].push(e.target.value);
+      return newProductInfo;
+    });
+  };
+
+  const handleTagDelete = e => {
+    setProductInfo(cur => {
+      const newProductInfo = { ...cur };
+      newProductInfo.product_tags = newProductInfo.product_tags.filter(
+        tag => e.target.name !== tag
+      );
+      return newProductInfo;
+    });
+  };
+
+  const handleOptionAdd = data => {
+    setProductInfo(cur => {
+      const newProductInfo = { ...cur };
+      newProductInfo.product_options.push(data);
+      return newProductInfo;
+    });
+  };
+
+  const handleOptionDelete = e => {
+    console.log('asdasdsa');
+    console.log(e);
+    console.log(e.target.name);
+    setProductInfo(cur => {
+      const newProductInfo = { ...cur };
+      console.log(newProductInfo);
+      newProductInfo.product_options = newProductInfo.product_options.filter(
+        option => option.option_title !== e.target.name
+      );
+      console.log(newProductInfo);
       return newProductInfo;
     });
   };
@@ -59,7 +100,11 @@ function RegisterInfo() {
         productValue={productInfo.product_amount}
         handleOnChange={handleOnChange}
       ></RegisterInput>
-      <RegisterCheck></RegisterCheck>
+      <RegisterOption
+        handleOptionAdd={handleOptionAdd}
+        productOption={productInfo.product_options}
+        handleOptionDelete={handleOptionDelete}
+      ></RegisterOption>
       <RegisterInput
         boxTitle={'상품설명'}
         boxHeight={'135px'}
@@ -68,17 +113,22 @@ function RegisterInfo() {
         productValue={productInfo.prdocut_description}
         handleOnChange={handleOnChange}
       ></RegisterInput>
-      <TagRegister></TagRegister>
+      <TagRegister
+        handleTagAdd={handleTagAdd}
+        productKey={'product_tags'}
+        product_tags={productInfo.product_tags}
+        handleTagDelete={handleTagDelete}
+      ></TagRegister>
     </ProductForm>
   );
 }
 
 const ProductForm = styled.form`
   width: 755px;
-  height: 584px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #c2d1d9;
 `;
 
 export default RegisterInfo;
