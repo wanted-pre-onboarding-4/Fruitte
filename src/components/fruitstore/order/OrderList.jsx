@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { Wrapper } from './order_info/CustomerInfo';
 import { Section, SectionTitle } from './OrderInfo';
 
-
 const OrderList = ({
   totalAmount,
   discount,
   resultPrice,
-  data: { product_name, product_image, delivery_fee, product_id , options },
+  data: { product_name, product_image, delivery_fee, product_id, options },
 }) => {
   return (
     <Container>

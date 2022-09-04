@@ -5,10 +5,7 @@ import PaymentAmount from './order_info/PaymentAmount';
 import PaymentMethod from './order_info/PaymentMethod';
 import ShippingInfo from './order_info/ShippingInfo';
 
-const OrderInfo = ({ data, totalAmount,deliveryFee,
-  totalPrice,
-  discount,
-  resultPrice }) => {
+const OrderInfo = ({ data, totalAmount, deliveryFee, totalPrice, discount, resultPrice }) => {
   const [paymentWay, setPaymentWay] = useState('');
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -52,10 +49,10 @@ const OrderInfo = ({ data, totalAmount,deliveryFee,
         <Section>
           <SectionTitle>결제금액</SectionTitle>
           <PaymentAmount
-            totalAmount = {totalAmount}
-            totalPrice = {totalPrice}
-            discount = {discount}
-            resultPrice = {resultPrice}
+            totalAmount={totalAmount}
+            totalPrice={totalPrice}
+            discount={discount}
+            resultPrice={resultPrice}
             data={data}
             paymentWay={paymentWay}
             userInfo={userInfo}

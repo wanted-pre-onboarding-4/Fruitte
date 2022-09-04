@@ -42,7 +42,9 @@ const PaymentAmount = ({
         </ListItem>
         <ListItem>
           <ListName>배송비 합계</ListName>
-          <ListPrice>+{data.delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</ListPrice>
+          <ListPrice>
+            +{data.delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+          </ListPrice>
         </ListItem>
         <hr />
         <ListItem>

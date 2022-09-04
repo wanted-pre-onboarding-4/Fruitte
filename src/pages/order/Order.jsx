@@ -12,11 +12,23 @@ const Order = () => {
     0
   );
   const discount = (totalPrice * state.discount_rate) / 100;
-  const resultPrice = totalPrice - discount + state.delivery_fee
+  const resultPrice = totalPrice - discount + state.delivery_fee;
   return (
     <Main>
-      <OrderList data={state} totalAmount={totalAmount} totalPrice={totalPrice} discount={discount} resultPrice={resultPrice} />
-      <OrderInfo data={state} totalAmount={totalAmount} totalPrice={totalPrice} discount={discount} resultPrice={resultPrice}/>
+      <OrderList
+        data={state}
+        totalAmount={totalAmount}
+        totalPrice={totalPrice}
+        discount={discount}
+        resultPrice={resultPrice}
+      />
+      <OrderInfo
+        data={state}
+        totalAmount={totalAmount}
+        totalPrice={totalPrice}
+        discount={discount}
+        resultPrice={resultPrice}
+      />
     </Main>
   );
 };
