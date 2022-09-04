@@ -5,10 +5,10 @@ import OrderInfo from '../../components/fruitstore/order/OrderInfo';
 import { useLocation } from 'react-router-dom';
 
 const Order = () => {
-  const {state} = useLocation()
+  const { state } = useLocation();
   return (
     <Main>
-      <OrderList data={state}/>
+      <OrderList data={state} />
       <OrderInfo data={state} />
     </Main>
   );
