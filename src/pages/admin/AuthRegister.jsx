@@ -15,6 +15,9 @@ const AuthRegister = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 `;
 
 export default AuthRegister;
