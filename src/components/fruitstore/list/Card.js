@@ -57,18 +57,16 @@ export default function Card({ product }) {
           })}
         </TagBox>
       </Link>
-      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-        <div style={{ marginRight: '5px' }}>
+      <PriceBox>
+        <Price>
           {product.product_price - product.product_price * product.discount_rate * 0.01 + '원'}
-        </div>
-        <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '5px' }}>
-          {product.product_price + '원'}
-        </div>
-        <div style={{ margin: 'auto' }} onClick={e => clickHander(e)}>
+        </Price>
+        <BeforePrice>{product.product_price + '원'}</BeforePrice>
+        <FavoriteBox onClick={e => clickHander(e)}>
           {product.isLiked ? <AiFillStar size="25" /> : <AiOutlineStar size="25" />}
-          <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
-        </div>
-      </div>
+          <FavoriteNum>{product.likes}</FavoriteNum>
+        </FavoriteBox>
+      </PriceBox>
     </CardBox>
   );
 }
@@ -110,4 +108,29 @@ const Tag = styled.div`
   color: ${props => props.fontcolor};
   padding: 5px;
   border-radius: 5px;
+`;
+const PriceBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+
+const Price = styled.div`
+  margin-right: 5px;
+`;
+
+const BeforePrice = styled.div`
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 5px;
+`;
+
+const FavoriteBox = styled.div`
+  margin: auto;
+`;
+
+const FavoriteNum = styled.span`
+  position: relative;
+  top: -5px;
 `;
