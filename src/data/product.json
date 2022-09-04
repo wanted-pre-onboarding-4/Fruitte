@@ -2,21 +2,27 @@
   {
     "product_id": "1",
     "user_id": "1",
-    "product_name": "상품 이름 1",
-    "product_price": 20000,
-    "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
-    ],
+    "product_name": "거창 오가네체리자두 3kg 한 상자",
+    "product_price": 30000,
+    "product_image": ["https://cdn.imweb.me/thumbnail/20200715/53fa50226803f.jpg"],
     "discount_rate": 10,
     "product_amount": 900,
-    "prdocut_description": "상품 설명이 들어가는 부분입니다.",
-    "product_tags": ["BEST", "SALE", "추천 상품"],
+    "prdocut_description": "거창 오가네 체리자두\n*3kg 한상자 (50개 내외)",
+    "product_tags": ["BEST", "MD", "판매대기"],
     "product_options": [
       {
         "option_title": "2kg",
+        "option_price": 27000,
+        "is_sold_out": false
+      },
+      {
+        "option_title": "4kg",
         "option_price": 50000,
+        "is_sold_out": false
+      },
+      {
+        "option_title": "6kg",
+        "option_price": 60000,
         "is_sold_out": false
       }
     ],
