@@ -10,7 +10,7 @@
 
 ## :link: 프로젝트 링크
 
-[여기에 링크]
+https://fruitte-4.netlify.app
 
 ## :nut_and_bolt: 구현 기능
 
