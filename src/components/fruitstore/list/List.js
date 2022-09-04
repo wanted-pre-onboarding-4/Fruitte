@@ -13,7 +13,6 @@ export default function List() {
     <>
       <Container>
         {product.slice(offset, offset + 10).map((product, index) => {
-          console.log(product);
           return <Card key={index} product={product} />;
         })}
       </Container>

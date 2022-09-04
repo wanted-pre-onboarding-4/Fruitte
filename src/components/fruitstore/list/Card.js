@@ -1,7 +1,24 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 import styled from 'styled-components';
-import { AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import productAtom from '../../../store/productAtom';
+import ProductData from '../../../data/product.json';
+
+import { useEffect } from 'react';
 export default function Card({ product }) {
+  const setProductData = useSetRecoilState(productAtom);
+  const Totalproduct = useRecoilValue(productAtom);
+  const [changeProduct, setChangeProduct] = useState(product);
+  useEffect(() => {});
+  function clickHander(e) {
+    console.log(product);
+    setProductData();
+
+    console.log('succes');
+  }
   return (
     <CardBox>
       <Link to={`/fruitstore/${product.product_id}`}>
@@ -30,8 +47,8 @@ export default function Card({ product }) {
         <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '5px' }}>
           {product.product_price + '원'}
         </div>
-        <div style={{ margin: 'auto' }}>
-          <AiOutlineStar size="25" />
+        <div style={{ margin: 'auto' }} onClick={e => clickHander(e)}>
+          {product.isLiked ? <AiFillStar size="25" /> : <AiOutlineStar size="25" />}
           <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
         </div>
       </div>
