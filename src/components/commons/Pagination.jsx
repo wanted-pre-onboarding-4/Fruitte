@@ -40,7 +40,7 @@ const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 16px;
+  margin: 30px;
 `;
 
 const Button = styled.button`

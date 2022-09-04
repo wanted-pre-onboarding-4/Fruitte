@@ -17,8 +17,8 @@ const Header = () => {
         <HeaderItem to="/">ABOUT US</HeaderItem>
       </HeaderItemContainer>
       <AuthItemContainer>
-        <AuthItem to="/">login</AuthItem>
-        <AuthItem to="/">join</AuthItem>
+        <AuthItem to="/admin/management">관리</AuthItem>
+        <AuthItem to="/admin/register">등록</AuthItem>
       </AuthItemContainer>
     </Container>
   );

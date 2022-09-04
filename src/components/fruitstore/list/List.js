@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import productAtom from '../../../store/productAtom';
-import Pagination from './Pagenation';
+import Pagination from '../../commons/Pagination';
 import Card from './Card';
+
 export default function List() {
   const product = useRecoilValue(productAtom);
   const [page, setPage] = useState(1);
@@ -25,12 +26,12 @@ export default function List() {
 }
 
 const Container = styled.div`
-  width: 1500px;
+  width: 100vw;
+  padding: 0px 30px;
   display: grid;
-  grid-template-columns: repeat(5, 300px);
+  grid-template-columns: repeat(5, 1fr);
   row-gap: 50px;
-  column-gap: 20px;
+  column-gap: 10px;
   justify-items: center;
-  margin: 50px auto;
-  margin-bottom: 150px;
+  margin: 50px 0px 100px 0px;
 `;
