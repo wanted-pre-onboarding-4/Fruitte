@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { AiFillStar } from 'react-icons/ai';
+import { AiOutlineStar } from 'react-icons/ai';
 export default function Card({ product }) {
   return (
     <Link to={`/fruitstore/${product.product_id}`}>
       <CardBox>
         <ProductImg width="250px" height="150px" src={product.product_image[0]} />
-        <ProductName style={{}}>{product.product_name}</ProductName>
-        <TagContainer style={{}}>
+        <ProductName>{product.product_name}</ProductName>
+        <TagContainer>
           {product.product_tags.map(tag => {
             return (
               <>
@@ -22,25 +22,23 @@ export default function Card({ product }) {
             );
           })}
         </TagContainer>
-        <div style={{ display: 'flex' }}>
-          <div style={{ marginRight: '15px' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+          <div style={{ marginRight: '5px' }}>
             {product.product_price - product.product_price * product.discount_rate * 0.01 + '원'}
           </div>
-          {'<='}
-          <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '15px' }}>
+          <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '5px' }}>
             {product.product_price + '원'}
           </div>
-          <div style={{ marginLeft: '40px' }}>
-            <AiFillStar size="25" />
-            <span style={{ position: 'relative', top: '18px', right: '22px' }}>
-              {product.likes}
-            </span>
+          <div style={{ margin: 'auto' }}>
+            <AiOutlineStar size="25" />
+            <span style={{ position: 'relative', top: '-5px' }}>{product.likes}</span>
           </div>
         </div>
       </CardBox>
     </Link>
   );
 }
+
 const ProductName = styled.div`
   font-size: 25px;
   font-weight: 500;
