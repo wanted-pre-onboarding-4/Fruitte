@@ -30,6 +30,7 @@ const OrderList = ({
               <div>
                 <p>{product_name}</p>
                 {options.map(option => (
+
                   <Option key={option.title}>
                     상품선택: {option.option_title} {option.option_amount}개 +({option.option_price}
                     )
