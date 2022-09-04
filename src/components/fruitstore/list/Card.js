@@ -74,8 +74,9 @@ export default function Card({ product }) {
 }
 
 const ProductName = styled.div`
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
+  width: 250px;
   margin-bottom: 30px;
   padding-top: 15px;
 `;
