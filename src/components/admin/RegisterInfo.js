@@ -52,16 +52,11 @@ function RegisterInfo() {
   };
 
   const handleOptionDelete = e => {
-    console.log('asdasdsa');
-    console.log(e);
-    console.log(e.target.name);
     setProductInfo(cur => {
       const newProductInfo = { ...cur };
-      console.log(newProductInfo);
       newProductInfo.product_options = newProductInfo.product_options.filter(
         option => option.option_title !== e.target.name
       );
-      console.log(newProductInfo);
       return newProductInfo;
     });
   };
