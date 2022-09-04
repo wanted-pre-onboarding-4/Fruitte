@@ -12,6 +12,7 @@ import AuthManagement from './pages/admin/AuthManagement';
 import ListPage from './pages/ListPage';
 import OrderData from './data/order.json';
 import PaymentComplet from './pages/PaymentComplete';
+import AuthRegister from './pages/admin/AuthRegister';
 import Footer from './components/commons/Footer';
 
 function App() {
@@ -33,9 +34,9 @@ function App() {
         <Route path="/" element={<Navigate to="/fruitstore" />} />
         <Route path="/fruitstore/:product_id" element={<FruitStoreDetailPage />} />
         <Route path="/fruitstore" element={<ListPage />} />
-        <Route path="/fruitstore/:product_id" element={<div>상품 상세 페이지</div>} />
         <Route path="/shop_payment/:product_id" element={<Order />} />
         <Route path="/admin" element={<div>관리자 등록페이지</div>} />
+        <Route path="/admin/register" element={<AuthRegister />} />
         <Route path="/admin/management" element={<AuthManagement />} />
         <Route path="/shop_payment/complete" element={<PaymentComplet />} />
       </Routes>
