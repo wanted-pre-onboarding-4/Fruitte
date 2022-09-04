@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 const PaymentAmount = ({
   data,
-  data: { product_price, product_amount, discount_rate, delivery_fee },
+  totalPrice,
+  discount,
+  resultPrice,
   paymentWay,
   userInfo,
   deliveryInfo,
 }) => {
   const navigate = useNavigate();
-  const totalPrice = product_price * product_amount;
-  const resultPrice = totalPrice - discount_rate + delivery_fee;
 
   const orderHandler = () => {
     const sendData = {
@@ -24,7 +24,6 @@ const PaymentAmount = ({
         ...deliveryInfo,
       },
     };
-    console.log(sendData);
     navigate('/shop_payment/complete', { state: sendData });
   };
 
@@ -39,11 +38,11 @@ const PaymentAmount = ({
         </ListItem>
         <ListItem>
           <ListName>할인금액 합계</ListName>
-          <ListPrice>{discount_rate.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</ListPrice>
+          <ListPrice>-{discount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</ListPrice>
         </ListItem>
         <ListItem>
           <ListName>배송비 합계</ListName>
-          <ListPrice>{delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</ListPrice>
+          <ListPrice>+{data.delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</ListPrice>
         </ListItem>
         <hr />
         <ListItem>

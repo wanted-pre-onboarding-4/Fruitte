@@ -5,11 +5,18 @@ import OrderInfo from '../../components/fruitstore/order/OrderInfo';
 import { useLocation } from 'react-router-dom';
 
 const Order = () => {
-  const {state} = useLocation()
+  const { state } = useLocation();
+  const totalAmount = state.options.reduce((pre, cur) => pre + cur.option_amount, 0);
+  const totalPrice = state.options.reduce(
+    (pre, cur) => pre + cur.option_amount * cur.option_price,
+    0
+  );
+  const discount = (totalPrice * state.discount_rate) / 100;
+  const resultPrice = totalPrice - discount + state.delivery_fee
   return (
     <Main>
-      <OrderList data={state}/>
-      <OrderInfo data={state} />
+      <OrderList data={state} totalAmount={totalAmount} totalPrice={totalPrice} discount={discount} resultPrice={resultPrice} />
+      <OrderInfo data={state} totalAmount={totalAmount} totalPrice={totalPrice} discount={discount} resultPrice={resultPrice}/>
     </Main>
   );
 };
