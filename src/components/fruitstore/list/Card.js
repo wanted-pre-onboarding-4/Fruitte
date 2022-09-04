@@ -1,14 +1,13 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { AiFillStar } from 'react-icons/ai';
 export default function Card({ product }) {
   return (
     <Link to={`/fruitstore/${product.product_id}`}>
       <CardBox>
-        <ProductImg width="280px" height="150px" src={product.product_image[0]} />
+        <ProductImg width="250px" height="150px" src={product.product_image[0]} />
         <ProductName style={{}}>{product.product_name}</ProductName>
-        <div style={{ display: 'flex', marginBottom: '30px' }}>
+        <TagContainer style={{}}>
           {product.product_tags.map(tag => {
             return (
               <>
@@ -22,7 +21,7 @@ export default function Card({ product }) {
               </>
             );
           })}
-        </div>
+        </TagContainer>
         <div style={{ display: 'flex' }}>
           <div style={{ marginRight: '15px' }}>
             {product.product_price - product.product_price * product.discount_rate * 0.01 + '원'}
@@ -30,6 +29,12 @@ export default function Card({ product }) {
           {'<='}
           <div style={{ textDecoration: 'line-through', color: 'gray', marginLeft: '15px' }}>
             {product.product_price + '원'}
+          </div>
+          <div style={{ marginLeft: '40px' }}>
+            <AiFillStar size="25" />
+            <span style={{ position: 'relative', top: '18px', right: '22px' }}>
+              {product.likes}
+            </span>
           </div>
         </div>
       </CardBox>
@@ -42,11 +47,23 @@ const ProductName = styled.div`
   margin-bottom: 30px;
   padding-top: 15px;
 `;
+const TagContainer = styled.div`
+  display: flex;
+  margin-bottom: 30px;
+  height: auto;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
 const CardBox = styled.div`
   width: 280px;
-  height: 300px;
+  height: auto;
   border-radius: 50px;
   padding-top: 15px;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-15px);
+  }
 `;
 const ProductImg = styled.img`
   display: block;
@@ -54,6 +71,8 @@ const ProductImg = styled.img`
 `;
 const Tag = styled.div`
   margin-left: 10px;
+  margin-top: 10px;
+
   background-color: ${props => props.backcolor};
   color: ${props => props.fontcolor};
   padding: 5px;

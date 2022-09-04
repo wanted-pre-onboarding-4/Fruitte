@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import productAtom from '../../../store/productAtom';
@@ -31,4 +31,5 @@ const Container = styled.div`
   column-gap: 20px;
   justify-items: center;
   margin: 50px auto;
+  margin-bottom: 150px;
 `;
