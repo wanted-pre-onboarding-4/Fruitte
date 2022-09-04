@@ -88,7 +88,6 @@ const TagBox = styled.div`
   flex-wrap: wrap;
 `;
 const CardBox = styled.div`
-  width: 280px;
   height: auto;
   border-radius: 50px;
   padding-top: 15px;
