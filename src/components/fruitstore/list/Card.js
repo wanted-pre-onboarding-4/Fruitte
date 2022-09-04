@@ -2,34 +2,53 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
-import { useSetRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import productAtom from '../../../store/productAtom';
 
 export default function Card({ product }) {
   const setProductData = useSetRecoilState(productAtom);
+  const totalProduct = useRecoilValue(productAtom);
   function clickHander(e) {
-    console.log(product);
-    setProductData();
-
-    console.log('succes');
+    let tempTotal = totalProduct.map(temp => {
+      if (temp.product_id === product.product_id) {
+        if (temp.isLiked === true) {
+          return {
+            ...temp,
+            likes: product.likes - 1,
+            isLiked: !product.isLiked,
+          };
+        } else {
+          return {
+            ...temp,
+            likes: product.likes + 1,
+            isLiked: !product.isLiked,
+          };
+        }
+      } else {
+        return { ...temp };
+      }
+    });
+    setProductData(tempTotal);
   }
   return (
     <CardBox>
-      <Link to={`/fruitstore/${product.product_id}`}>
+      <Link to={`/fruitstore/${product.product_id}`} state={{ product: product }}>
         <ProductImg width="250px" height="150px" src={product.product_image[0]} />
         <ProductName>{product.product_name}</ProductName>
         <TagBox>
-          {product.product_tags.map(tag => {
+          {product.product_tags.map((tag, index) => {
             return (
-              <>
+              <div key={tag}>
                 {tag === 'BEST' ? (
-                  <Tag backcolor="red" fontcolor="white">
+                  <Tag key={tag} backcolor="red" fontcolor="white">
                     {tag}
                   </Tag>
                 ) : (
-                  <Tag backcolor="skyblue">{tag}</Tag>
+                  <Tag key={tag} backcolor="skyblue">
+                    {tag}
+                  </Tag>
                 )}
-              </>
+              </div>
             );
           })}
         </TagBox>
