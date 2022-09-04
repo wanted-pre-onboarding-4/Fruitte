@@ -28,7 +28,7 @@ const ProductImage = () => {
       <ImageViewer ref={previewRef} />
 
       <ImageInputConatiner>
-        <ImageLabel htmlFor="image_file">업로드</ImageLabel>
+        <ImageLabel htmlFor="image_file">사진 업로드</ImageLabel>
         <ImageInput type="file" id="image_file" onChange={handleChange} />
       </ImageInputConatiner>
       <ImageContainer>
