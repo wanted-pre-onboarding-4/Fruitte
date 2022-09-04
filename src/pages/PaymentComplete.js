@@ -6,8 +6,23 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PaymentCompleteSection from '../components/fruitstore/orderComplete/PaymentCompletSection';
 import BuyerInfo from '../components/fruitstore/orderComplete/BuyerInfo';
 import RecieverInfo from '../components/fruitstore/orderComplete/ RecieverInfo';
+import { useLocation } from 'react-router-dom';
 const PaymentComplet = () => {
   const navigate = useNavigate();
+  const data = useLocation().state;
+  console.log(data);
+  const {
+    delivery_fee: deliveryFee,
+    delivery_info: deliveryInfo,
+    discount_rate: discountRate,
+    order_id: orderId,
+    payment_way: paymentWay,
+    product_amount: productAmount,
+    product_image: productiImage,
+    product_name: productName,
+    product_price: productpPrice,
+    user_info: userInfo,
+  } = data;
 
   const goToPrevPage = () => {
     navigate(-1);
@@ -37,10 +52,20 @@ const PaymentComplet = () => {
               <PageName>주문 상세 내역</PageName>
             </Title>
           </PaymentCompletHeader>
-          <PaymentCompleteSection getRandomDate={getRandomDate}></PaymentCompleteSection>
+          <PaymentCompleteSection
+            getRandomDate={getRandomDate}
+            deliveryFee={deliveryFee}
+            discountRate={discountRate}
+            orderId={orderId}
+            paymentWay={paymentWay}
+            productAmount={productAmount}
+            productiImage={productiImage}
+            productName={productName}
+            productpPrice={productpPrice}
+          ></PaymentCompleteSection>
           <DeliveryInfo>
-            <BuyerInfo></BuyerInfo>
-            <RecieverInfo></RecieverInfo>
+            <BuyerInfo userInfo={userInfo}></BuyerInfo>
+            <RecieverInfo deliveryInfo={deliveryInfo}></RecieverInfo>
           </DeliveryInfo>
         </PaymentCompleteContents>
       </PaymentCompleteWrapper>
