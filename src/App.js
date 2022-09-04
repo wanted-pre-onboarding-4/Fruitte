@@ -12,6 +12,7 @@ import AuthManagement from './pages/admin/AuthManagement';
 import ListPage from './pages/ListPage';
 import OrderData from './data/order.json';
 import PaymentComplet from './pages/PaymentComplete';
+import Footer from './components/commons/Footer';
 
 function App() {
   const setProductData = useSetRecoilState(productAtom);
@@ -38,6 +39,7 @@ function App() {
         <Route path="/admin/management" element={<AuthManagement />} />
         <Route path="/shop_payment/complete" element={<PaymentComplet />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
