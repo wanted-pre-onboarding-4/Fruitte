@@ -439,26 +439,26 @@
   {
     "product_id": "15",
     "user_id": "15",
-    "product_name": "카시오 학생 수능시계 남녀공용",
+    "product_name": "오레오 오즈 1박스",
     "product_price": 15000,
     "product_image": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://shop-phinf.pstatic.net/20220313_61/1647103267812TCXWd_JPEG/48239101395698787_1272922040.jpg?type=m510",
+      "https://shop-phinf.pstatic.net/20220313_30/16471032752156T0qK_JPEG/48239109015999558_363861238.jpg?type=m510",
+      "https://shop-phinf.pstatic.net/20220313_28/1647103279984DnSAc_JPEG/48239113780269438_1682069058.jpg?type=m510"
     ],
     "discount_rate": 15,
     "product_amount": 0,
-    "prdocut_description": "1년 중 한달 동안만 수확하는 향금향, 황금향 선물로 고마운 분들께 마음을 전해요.",
+    "prdocut_description": "오레오 오즈는 우유와 함께 찍어먹으면 훨씬 더 맛있어요^^.",
     "product_tags": ["BEST", "SALE"],
     "product_options": [
       {
-        "option_title": "2kg",
-        "option_price": 50000,
+        "option_title": "1박스",
+        "option_price": 15000,
         "is_sold_out": true
       },
       {
-        "option_title": "3kg",
-        "option_price": 75000,
+        "option_title": "2박스",
+        "option_price": 25000,
         "is_sold_out": true
       }
     ],

@@ -17,21 +17,15 @@ const DUMMY_OPTIONS = [
 ];
 
 const OrderList = ({
-  data: {
-    product_name,
-    discount_rate,
-    product_image,
-    delivery_fee,
-    product_id,
-  },
+  data: { product_name, discount_rate, product_image, delivery_fee, product_id },
 }) => {
   const totalAmount = DUMMY_OPTIONS.reduce((pre, cur) => pre + cur.option_amount, 0);
   const totalPrice = DUMMY_OPTIONS.reduce(
     (pre, cur) => pre + cur.option_amount * cur.option_price,
     0
   );
-    const discount = (totalPrice * discount_rate)/100
-    const resultPrice = totalPrice - discount
+  const discount = (totalPrice * discount_rate) / 100;
+  const resultPrice = totalPrice - discount;
   return (
     <Container>
       <Section>
@@ -51,16 +45,21 @@ const OrderList = ({
             <ProductImageAndDes>
               <img src={product_image[0]} alt="상품 이미지" />
               <div>
-              <p>{product_name}</p>
-              {DUMMY_OPTIONS.map(option=>(
-                <Option key={option.title}>상품선택: {option.option_title} {option.option_amount}개 +({option.option_price})</Option>
-              ))}
+                <p>{product_name}</p>
+                {DUMMY_OPTIONS.map(option => (
+                  <Option key={option.title}>
+                    상품선택: {option.option_title} {option.option_amount}개 +({option.option_price}
+                    )
+                  </Option>
+                ))}
               </div>
             </ProductImageAndDes>
             <ResponsiveWrapper>
               <ProductDeliveryFee>
                 <p>
-                  {delivery_fee === 0 ? "무료" : `${delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}
+                  {delivery_fee === 0
+                    ? '무료'
+                    : `${delivery_fee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원`}
                 </p>
               </ProductDeliveryFee>
               <ProductAmount>
@@ -146,10 +145,10 @@ const ProductImageAndDes = styled.div`
     width: 100%;
     border-radius: 5px;
   }
-  div{
+  div {
     display: flex;
     flex-direction: column;
-    row-gap: .25em;
+    row-gap: 0.25em;
   }
 `;
 
@@ -166,15 +165,15 @@ const ProductDeliveryFee = styled.div`
 
 const ProductAmount = styled.div`
   display: flex;
-  flex: .5;
+  flex: 0.5;
   justify-content: center;
 `;
 
 const ProductDiscount = styled.div`
-display: flex;
+  display: flex;
   flex: 1.25;
   justify-content: center;
-`
+`;
 
 const ProductTotalPrice = styled.div`
   display: flex;
@@ -183,6 +182,6 @@ const ProductTotalPrice = styled.div`
 `;
 
 const Option = styled.p`
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: #aaa9a9;
-`
+`;
