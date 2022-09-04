@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import productAtom from '../../../store/productAtom';
 import { useRecoilValue } from 'recoil';
@@ -37,8 +37,12 @@ export default function FruitStoreDetail() {
       alert('필수 옵션을 선택해주세요');
       return;
     }
+    const sendData = {
+      ...data,
+      options: [...pick],
+    };
     alert('결제 화면으로 이동합니다');
-    navigate(`/shop_payment/${product_id}`, { state: { ...data, ...pick } });
+    navigate(`/shop_payment/${product_id}`, { state: sendData });
   };
 
   return (
@@ -87,7 +91,7 @@ export default function FruitStoreDetail() {
                       <S.PriceThrough>{data.product_price.toLocaleString()}원</S.PriceThrough>
                       <S.DiscountRate>{data.discount_rate}%</S.DiscountRate>
                       <S.Price>
-                        {(data.discount_rate * 0.01 * data.product_price).toLocaleString()}원
+                        {((1 - data.discount_rate * 0.01) * data.product_price).toLocaleString()}원
                       </S.Price>
                     </>
                   )}
