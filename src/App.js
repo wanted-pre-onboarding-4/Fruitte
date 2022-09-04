@@ -6,7 +6,6 @@ import productAtom from './store/productAtom';
 import GlobalStyle from './styles/Globalstyles';
 import ProductData from './data/product.json';
 
-
 function App() {
   const setProductData = useSetRecoilState(productAtom);
 
