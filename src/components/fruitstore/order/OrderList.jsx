@@ -29,8 +29,8 @@ const OrderList = ({
               <img src={product_image[0]} alt="상품 이미지" />
               <div>
                 <p>{product_name}</p>
-                {options.map(option => (
 
+                {options.map(option => (
                   <Option key={option.title}>
                     상품선택: {option.option_title} {option.option_amount}개 +({option.option_price}
                     )

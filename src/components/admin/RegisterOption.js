@@ -26,12 +26,14 @@ function RegisterOption({ handleOptionAdd, productOption, handleOptionDelete }) 
   };
 
   const AddOption = () => {
-    handleOptionAdd(option);
-    setOption({
-      option_title: '',
-      option_price: 0,
-      is_sold_out: false,
-    });
+    if (option.option_price !== 0 && option.option_title !== '') {
+      handleOptionAdd(option);
+      setOption({
+        option_title: '',
+        option_price: 0,
+        is_sold_out: false,
+      });
+    }
   };
   return (
     <ProductInputBox height={'auto'}>

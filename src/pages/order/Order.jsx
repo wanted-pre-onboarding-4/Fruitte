@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 const Order = () => {
   const { state } = useLocation();
+
   const totalAmount = state.options.reduce((pre, cur) => pre + cur.option_amount, 0);
   const totalPrice = state.options.reduce(
     (pre, cur) => pre + cur.option_amount * cur.option_price,
